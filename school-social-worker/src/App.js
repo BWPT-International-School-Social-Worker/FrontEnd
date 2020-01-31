@@ -1,14 +1,24 @@
-import React from 'react';
-import './App.scss';
+import React, { useState } from "react";
+import { userContext } from "./contexts/userContext";
+import "./App.scss";
 import Form from "./components/Register";
 
 function App() {
+  const [user, setUser] = useState();
+  const currentUser = name => {
+    setUser(name);
+  };
   return (
-    <div className="App">
-      <img src = "https://www.ghanamakeadifference.org/uploads/2/9/4/1/29418375/1481814865.png"/>
-      <h1>Register New User</h1>
-      <Form/>
-    </div>
+    <userContext.Provider value={{ user, currentUser }}>
+      <div className="App">
+        <img
+          alt=""
+          src="https://www.ghanamakeadifference.org/uploads/2/9/4/1/29418375/1481814865.png"
+        />
+        <h1>Register New User</h1>
+        <Form />
+      </div>
+    </userContext.Provider>
   );
 }
 
