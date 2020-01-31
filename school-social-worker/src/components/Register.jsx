@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { userContext } from "../contexts/userContext";
 import "./Register.scss";
+import {headDiv, stylBtn} from "../Styles/styles";
 
 function Form() {
   const { user,currentUser } = useContext(userContext);
@@ -13,9 +14,12 @@ function Form() {
   console.log(errors);
 
   return (
-    <div className="form-container">
-      <form className="sign-up-form" onSubmit={handleSubmit(onSubmit)}>
-        <input
+      
+    <headDiv >
+        
+      <form className = "sign-up-form" onSubmit={handleSubmit(onSubmit)}>
+
+      <input
           type="text"
           placeholder="UserName"
           name="UserName"
@@ -69,10 +73,9 @@ function Form() {
           name="Password"
           ref={register({ required: true, min: 8 })}
         />
-
-        <button type="submit">Register</button>
+        <stylBtn  type="submit" >Register</stylBtn>
       </form>
-    </div>
+    </headDiv>
   );
 }
 
