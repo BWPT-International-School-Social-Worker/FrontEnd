@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import "./Register.scss";
+import {headDiv, stylBtn} from "../Styles/styles";
 
 function Form() {
   const { register, handleSubmit, errors } = useForm();
@@ -9,7 +10,7 @@ function Form() {
 
   return (
       
-    <div className = "form-container">
+    <headDiv >
         
       <form className = "sign-up-form" onSubmit={handleSubmit(onSubmit)}>
 
@@ -63,9 +64,9 @@ function Form() {
         />
         
 
-        <button  type="submit" >Register</button>
+        <stylBtn  type="submit" >Register</stylBtn>
       </form>
-    </div>
+    </headDiv>
   );
 }
 
