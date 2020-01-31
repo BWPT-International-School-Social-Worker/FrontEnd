@@ -1,7 +1,8 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import "./Register.scss";
-import {headDiv, stylBtn} from "../Styles/styles";
+import { StylBtn, HeadDiv } from "../Styles/styles";
+import { Link } from "react-router-dom"
 
 function Form() {
   const { register, handleSubmit, errors } = useForm();
@@ -9,12 +10,9 @@ function Form() {
   console.log(errors);
 
   return (
-      
-    <headDiv >
-        
-      <form className = "sign-up-form" onSubmit={handleSubmit(onSubmit)}>
-
-      <input
+    <HeadDiv className="form-container">
+      <form className="sign-up-form" onSubmit={handleSubmit(onSubmit)}>
+        <input
           type="text"
           placeholder="UserName"
           name="UserName"
@@ -26,7 +24,7 @@ function Form() {
           name="First name"
           ref={register({ required: true, maxLength: 80 })}
         />
-         <input
+        <input
           type="text"
           placeholder="Last name"
           name="Last name"
@@ -44,11 +42,17 @@ function Form() {
           name="Mobile number"
           ref={register({ maxLength: 12 })}
         />
-        <label htmlFor = "role"> Role: 
-            <select className = "role" name="Role" ref={register({ required: true })}>
+        <label htmlFor="role">
+          {" "}
+          Role:
+          <select
+            className="role"
+            name="Role"
+            ref={register({ required: true })}
+          >
             <option value="Administrator">Administrator</option>
             <option value=" Social Worker"> Social Worker</option>
-            </select>
+          </select>
         </label>
         <input
           type="text"
@@ -62,11 +66,11 @@ function Form() {
           name="Password"
           ref={register({ required: true, min: 8 })}
         />
-        
-
-        <stylBtn  type="submit" >Register</stylBtn>
+        <Link className="reg" to='/Sign-in'>
+        <StylBtn type="submit">Register</StylBtn>
+        </Link>
       </form>
-    </headDiv>
+    </HeadDiv>
   );
 }
 

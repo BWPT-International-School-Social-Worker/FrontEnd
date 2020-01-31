@@ -1,14 +1,17 @@
 import styled from "styled-components";
 
 export const StylBtn = styled.button`
+  border: 0
   cursor: pointer;
-  border-radius: 9px;
+  display: flex;
   width: 9rem;
   justify-content: center;
   margin: 0 auto;
   height: 4rem;
-  font-size: 1.75rem;
+  border-radius: 4px;
+  font-family: inherit;
   &:hover {
+    color: black;
     transition: transform .25s;
     transform: scale(1.25);
     background: rgb(166, 198, 54);
@@ -17,10 +20,9 @@ export const StylBtn = styled.button`
       rgba(166, 198, 54, 1) 7%,
       rgba(251, 181, 19, 1) 52%,
       rgba(202, 32, 40, 1) 100%
-    );
-`
+      );
+`;
 
-export const headDiv = styled.div`
-border-radius: 6px;
-height: 7rem;
-`
+export const HeadDiv = styled.div`
+  border-radius: 6px;
+`;

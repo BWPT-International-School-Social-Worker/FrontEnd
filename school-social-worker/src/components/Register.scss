@@ -1,64 +1,61 @@
-.form-container{
-    height: 100vh;
-    width: 100%;
+.form-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #a6c636;
+  padding: 4% 0;
+  font-family: 'Graduate', cursive;
+  .sign-up-form {
+    background: rgb(249,181,20);
+    background: linear-gradient(180deg, rgba(249,181,20,1) 0%, rgba(202,32,40,1) 99%);
     display: flex;
+    width: 50%;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    background-color: #879847;
-   
-   
-
-    .sign-up-form{
-        background-color: #414235;
-        display :flex;
-        width: 50%;
-        flex-direction: column;
-        justify-content: center;
-        padding: 50px;
-        outline:1px solid #ae6802;
-        input{
-            margin-bottom: 25px;
-            height: 35px;
-            font-size: 1.7rem;
-            padding: 5px;
-            width: 100%;
-            color:#f9b514;
-            border-radius: 2%;
-            
-        }
-        h1{
-            font-size: 2.6rem;
-            font-weight: bolder;
-        }
-        p{
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-       
-        button{
-            width: 20%;
-            color: #f9b514;
-            border-radius: 5%;
-            height: 50px;
-            font-size: 2.4rem;
-            position: relative;
-            left:40%;
-            cursor: pointer;
-            &:hover{
-                font-size: 1.6rem;
-            }
-        }
-        
-        .role{
-            width:20%;
-            height:5vh;
-            margin-bottom: 2%;
-            
-        }
-        label{
-            font-size:2.5rem;
-            margin-right:2%;
-        }
-
+    padding: 50px;
+   border-radius: 5px;
+    .reg {
+      text-decoration: none;
     }
+
+    input {
+      margin-bottom: 25px;
+      height: 35px;
+      font-size: 1.7rem;
+      padding: 5px;
+      width: 100%;
+      color: #f9b514;
+      border-radius: 2%;
+    }
+    h1 {
+      font-size: 2.6rem;
+      font-weight: bolder;
+    }
+    p {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    button {
+      width: 20%;
+      height: 50px;
+      text-decoration: none;
+      cursor: pointer;
+      &:hover {
+        font-size: 1.6rem;
+      }
+    }
+
+    .role {
+      width: 20%;
+      height: 5vh;
+      margin-bottom: 2%;
+    }
+    label {
+      font-size: 2.5rem;
+      margin-right: 2%;
+    }
+  }
 }
