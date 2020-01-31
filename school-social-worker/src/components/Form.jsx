@@ -43,8 +43,8 @@ function Form() {
           name="Mobile number"
           ref={register({ maxLength: 12 })}
         />
-        <label htmlFor = "role"> Role: 
-            <select className = "role" name="Role" ref={register({ required: true })}>
+        <label className = "role" htmlFor = "role"> Role: 
+            <select  className = "role" name="Role" ref={register({ required: true })}>
             <option value="Administrator">Administrator</option>
             <option value=" Social Worker"> Social Worker</option>
             </select>
