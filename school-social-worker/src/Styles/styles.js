@@ -12,8 +12,8 @@ export const StylBtn = styled.button`
   font-family: inherit;
   &:hover {
     color: black;
-    transition: transform .25s;
-    transform: scale(1.25);
+    transition: transform 1s;
+    transform: scale(1);
     background: rgb(166, 198, 54);
     background: linear-gradient(
       98deg,

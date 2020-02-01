@@ -6,20 +6,23 @@
   align-items: center;
   background-color: #a6c636;
   padding: 4% 0;
-  font-family: 'Graduate', cursive;
+  font-family: "Graduate", cursive;
   .sign-up-form {
-    background: rgb(249,181,20);
-    background: linear-gradient(180deg, rgba(249,181,20,1) 0%, rgba(202,32,40,1) 99%);
+    background: rgb(249, 181, 20);
+    background: linear-gradient(
+      180deg,
+      rgba(249, 181, 20, 1) 0%,
+      rgba(202, 32, 40, 1) 99%
+    );
     display: flex;
     width: 50%;
     flex-direction: column;
     justify-content: center;
     padding: 50px;
-   border-radius: 5px;
+    border-radius: 5px;
     .reg {
       text-decoration: none;
     }
-
     input {
       margin-bottom: 25px;
       height: 35px;
