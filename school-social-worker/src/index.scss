@@ -74,12 +74,14 @@ body {
   padding: 4%;
   line-height: 1;
   background-repeat: no-repeat, repeat;
-  background-position: top;
-  background-image: url("boats.jpg");
+  background-position: bottom;
+  background-image: url("Ghana.jpg");
   background-attachment: fixed;
+  background-color:  linear-gradient(180deg, rgba(222,185,142,1) 0%, rgba(255,255,255,1) 95%);
+ 
   img {
     width: 30%;
-    height: 20%;
+    
   }
 }
 ol,

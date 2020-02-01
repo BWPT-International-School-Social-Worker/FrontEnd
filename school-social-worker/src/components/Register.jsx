@@ -67,7 +67,7 @@ function Form() {
           ref={register({ required: true, min: 8 })}
         />
         <Link className="reg" to='/Sign-in'>
-        <StylBtn type="submit">Register</StylBtn>
+        <StylBtn className= "signup" type="submit">Register</StylBtn>
         </Link>
       </form>
     </HeadDiv>

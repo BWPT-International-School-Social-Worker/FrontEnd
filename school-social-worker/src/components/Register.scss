@@ -1,3 +1,5 @@
+
+
 .form-container {
   height: 100%;
   width: 100%;
@@ -41,20 +43,11 @@
       margin-bottom: 10px;
     }
 
-    button {
-      width: 20%;
-      height: 50px;
-      text-decoration: none;
-      cursor: pointer;
-      &:hover {
-        font-size: 1.6rem;
-      }
-    }
-
     .role {
       width: 20%;
       height: 5vh;
       margin-bottom: 2%;
+
     }
     label {
       font-size: 2.5rem;
@@ -62,3 +55,4 @@
     }
   }
 }
+
