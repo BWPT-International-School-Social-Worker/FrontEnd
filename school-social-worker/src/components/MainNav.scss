@@ -1,0 +1,31 @@
+h1{
+    font-weight: bold;
+    font-size:35em;
+    color:black;
+    text-align: center;
+    margin-bottom: 3%;
+    text-shadow: 1px 1px #ae6802;
+  }
+  
+  img{
+    width:150px;
+  }
+  p{
+      color:yellow;
+      font-size:1.9rem;
+    
+    
+      
+  }
+
+  
+  .nav-container{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+   
+      button{
+          margin: 10%;
+      }
+     
+  }

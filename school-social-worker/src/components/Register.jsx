@@ -1,16 +1,25 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
+import { userContext } from "../contexts/userContext";
 import "./Register.scss";
 import { headDiv, StylBtn } from "../Styles/styles";
 
 function Form() {
+  const { user, currentUser } = useContext(userContext);
   const { register, handleSubmit, errors } = useForm();
-  const onSubmit = data => console.log(data);
+  const onSubmit = data => {
+    currentUser(data.FirstName);
+    console.log(user);
+  };
   console.log(errors);
 
   return (
     <headDiv className="form-container">
+      <div>
+       
+      </div>
       <form className="sign-up-form" onSubmit={handleSubmit(onSubmit)}>
+      <h1>Register New User</h1>
         <input
           type="text"
           placeholder="UserName"
@@ -20,7 +29,7 @@ function Form() {
         <input
           type="text"
           placeholder="First name"
-          name="First name"
+          name="FirstName"
           ref={register({ required: true, maxLength: 80 })}
         />
         <input

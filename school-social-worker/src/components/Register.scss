@@ -4,31 +4,39 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #879847;
+    background-image:url("https://thumbs.dreamstime.com/z/classroom-ghana-west-africa-elementary-school-37449106.jpg");
    
    
 
     .sign-up-form{
-        background-color: #414235;
+        background-color: white;
         display :flex;
-        width: 50%;
+        width: 40%;
+        height:60vh;
         flex-direction: column;
         justify-content: center;
         padding: 50px;
-        outline:1px solid #ae6802;
+        outline:1px solid black;
+        display: flex;
+        
         input{
             margin-bottom: 25px;
             height: 35px;
             font-size: 1.7rem;
             padding: 5px;
-            width: 100%;
+            width: 80%;
             color:#f9b514;
             border-radius: 2%;
-            
+            border: none;
+            border-bottom: 2px solid #f9b514;
+            justify-content: center;
+            text-align: center;
+               
         }
         h1{
-            font-size: 2.6rem;
+            font-size: 2.8rem;
             font-weight: bolder;
+            margin:2%;
         }
         p{
             font-size: 2rem;
@@ -48,7 +56,7 @@
         }
         
         .role{
-            width:40%;
+            width:50%;
             height:5vh;
             margin-bottom: 2%;
             
