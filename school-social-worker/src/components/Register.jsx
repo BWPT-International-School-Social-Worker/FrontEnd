@@ -2,24 +2,21 @@ import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { userContext } from "../contexts/userContext";
 import "./Register.scss";
-import {HeadDiv, StylBtn} from "../Styles/styles";
+import { HeadDiv, StylBtn } from "../Styles/styles";
 
 function Form() {
-  const { user,currentUser } = useContext(userContext);
+  const { user, currentUser } = useContext(userContext);
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = data => {
     currentUser(data.FirstName);
-    console.log(user)
+    console.log(user);
   };
   console.log(errors);
 
   return (
-      
-    <HeadDiv >
-        
-      <form className = "sign-up-form" onSubmit={handleSubmit(onSubmit)}>
-
-      <input
+    <HeadDiv>
+      <form className="sign-up-form" onSubmit={handleSubmit(onSubmit)}>
+        <input
           type="text"
           placeholder="UserName"
           name="UserName"
@@ -37,18 +34,25 @@ function Form() {
           name="Last name"
           ref={register({ required: true, maxLength: 100 })}
         />
-        <input
-          type="text"
-          placeholder="Email"
-          name="Email"
-          ref={register({ pattern: /^\S+@\S+$/i })}
-        />
-        <input
-          type="tel"
-          placeholder="Mobile number"
-          name="Mobile number"
-          ref={register({ maxLength: 12 })}
-        />
+        <label>
+          *
+          <input
+            type="text"
+            placeholder="Email"
+            name="Email"
+            ref={register({ pattern: /^\S+@\S+$/i })}
+          />
+          optional
+        </label>
+        <label>*
+          <input
+            type="tel"
+            placeholder="Mobile number"
+            name="Mobile number"
+            ref={register({ maxLength: 12 })}
+          />
+          optional
+        </label>
         <label htmlFor="role">
           {" "}
           Role:
@@ -73,7 +77,7 @@ function Form() {
           name="Password"
           ref={register({ required: true, min: 8 })}
         />
-        <StylBtn  type="submit" >Register</StylBtn>
+        <StylBtn type="submit">Register</StylBtn>
       </form>
     </HeadDiv>
   );
