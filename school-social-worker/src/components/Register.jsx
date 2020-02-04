@@ -2,7 +2,9 @@ import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { userContext } from "../contexts/userContext";
 import "./Register.scss";
-import { headDiv, StylBtn } from "../Styles/styles";
+
+import { HeadDiv, StylBtn } from "../Styles/styles";
+
 
 function Form() {
   const { user, currentUser } = useContext(userContext);
@@ -14,7 +16,7 @@ function Form() {
   console.log(errors);
 
   return (
-    <headDiv className="form-container">
+    <HeadDiv className="form-container">
       <form className="sign-up-form" onSubmit={handleSubmit(onSubmit)}>
         <div className = "user-icon">
           <i
@@ -27,6 +29,7 @@ function Form() {
         <i class="fas fa-signature" style={{ fontSize: "20px", color: "grey" }}>
           :
         </i>
+
         <input
           type="text"
           placeholder="UserName"
@@ -73,6 +76,7 @@ function Form() {
           ref={register({ maxLength: 12 })}
         />
         <label className="role" htmlFor="role">
+
           {" "}
           Role:
           <select
@@ -103,6 +107,7 @@ function Form() {
           ref={register({ required: true, min: 8 })}
         />
 
+        
         <StylBtn type="submit">Register</StylBtn>
       </form>
     </headDiv>
