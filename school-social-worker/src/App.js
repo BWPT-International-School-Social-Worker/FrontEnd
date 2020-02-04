@@ -15,6 +15,13 @@ function App() {
           alt=""
           src="https://www.ghanamakeadifference.org/uploads/2/9/4/1/29418375/1481814865.png"
         />
+
+        {/* 
+        routes
+        landing
+        nav=privet 
+        */}
+        
         <h1>Register New User</h1>
         <Form />
       </div>
