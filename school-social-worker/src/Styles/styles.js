@@ -23,4 +23,5 @@ export const StylBtn = styled.button`
 export const HeadDiv = styled.div`
 border-radius: 6px;
 height: 7rem;
+
 `

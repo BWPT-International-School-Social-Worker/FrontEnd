@@ -2,7 +2,9 @@ import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { userContext } from "../contexts/userContext";
 import "./Register.scss";
+
 import { HeadDiv, StylBtn } from "../Styles/styles";
+
 
 function Form() {
   const { user, currentUser } = useContext(userContext);
@@ -14,46 +16,67 @@ function Form() {
   console.log(errors);
 
   return (
-    <HeadDiv>
+    <HeadDiv className="form-container">
       <form className="sign-up-form" onSubmit={handleSubmit(onSubmit)}>
+        <div className = "user-icon">
+          <i
+            class="fas fa-users"
+            style={{ fontSize: "70px", color: "grey" }}
+          ></i>
+        </div>
+
+        <h1>Register New User</h1>
+        <i class="fas fa-signature" style={{ fontSize: "20px", color: "grey" }}>
+          :
+        </i>
+
         <input
           type="text"
           placeholder="UserName"
           name="UserName"
           ref={register({ required: true, max: 15, min: 8 })}
         />
+        <i class="fas fa-signature" style={{ fontSize: "20px", color: "grey" }}>
+          :
+        </i>
         <input
           type="text"
           placeholder="First name"
           name="FirstName"
           ref={register({ required: true, maxLength: 80 })}
         />
+        <i class="fas fa-signature" style={{ fontSize: "20px", color: "grey" }}>
+          :
+        </i>
         <input
           type="text"
           placeholder="Last name"
           name="Last name"
           ref={register({ required: true, maxLength: 100 })}
         />
-        <label>
-          *
-          <input
-            type="text"
-            placeholder="Email"
-            name="Email"
-            ref={register({ pattern: /^\S+@\S+$/i })}
-          />
-          optional
-        </label>
-        <label>*
-          <input
-            type="tel"
-            placeholder="Mobile number"
-            name="Mobile number"
-            ref={register({ maxLength: 12 })}
-          />
-          optional
-        </label>
-        <label htmlFor="role">
+        <i class="fas fa-envelope" style={{ fontSize: "20px", color: "grey" }}>
+          :
+        </i>
+        <input
+          type="text"
+          placeholder="Email"
+          name="Email"
+          ref={register({ pattern: /^\S+@\S+$/i })}
+        />
+        <i
+          class="fas fa-phone-square-alt"
+          style={{ fontSize: "20px", color: "grey" }}
+        >
+          :
+        </i>
+        <input
+          type="tel"
+          placeholder="Mobile number"
+          name="Mobile number"
+          ref={register({ maxLength: 12 })}
+        />
+        <label className="role" htmlFor="role">
+
           {" "}
           Role:
           <select
@@ -65,21 +88,29 @@ function Form() {
             <option value=" Social Worker"> Social Worker</option>
           </select>
         </label>
+        <i class="fas fa-building" style={{ fontSize: "20px", color: "grey" }}>
+          :
+        </i>
         <input
           type="text"
           placeholder="Organization"
           name="Organization"
           ref={register({ required: true })}
         />
+        <i class="fas fa-lock" style={{ fontSize: "20px", color: "grey" }}>
+          :
+        </i>
         <input
           type="text"
           placeholder="Password"
           name="Password"
           ref={register({ required: true, min: 8 })}
         />
+
+        
         <StylBtn type="submit">Register</StylBtn>
       </form>
-    </HeadDiv>
+    </headDiv>
   );
 }
 
