@@ -1,8 +1,13 @@
 import axios from "axios";
 
-const api = axios.create({
-  baseURL: "http://localhost:3300/api",
-  withCredentials: true
-});
+export const axiosWithAuth = () => {
+  const token = localStorage.getItem("token");
 
-export default api;
+  return axios.create({
+    baseURL: "https://social-worker-backend.herokuapp.com/api",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `${token}`
+    }
+  });
+};
