@@ -5,20 +5,26 @@ import "./Register.scss";
 
 import { HeadDiv, StylBtn } from "../Styles/styles";
 
+import api from "../utils/axiosWithAuth";
 
 function Form() {
   const { user, currentUser } = useContext(userContext);
   const { register, handleSubmit, errors } = useForm();
-  const onSubmit = data => {
-    currentUser(data.FirstName);
-    console.log(user);
+
+  const onSubmit = values => {
+    api
+      .post("/auth/register", values)
+      .then(response => {
+        console.log(response);
+      })
+      .catch(error => console.log(error.response));
   };
   console.log(errors);
 
   return (
     <HeadDiv className="form-container">
       <form className="sign-up-form" onSubmit={handleSubmit(onSubmit)}>
-        <div className = "user-icon">
+        <div className="user-icon">
           <i
             class="fas fa-users"
             style={{ fontSize: "70px", color: "grey" }}
@@ -76,7 +82,6 @@ function Form() {
           ref={register({ maxLength: 12 })}
         />
         <label className="role" htmlFor="role">
-
           {" "}
           Role:
           <select
@@ -107,7 +112,6 @@ function Form() {
           ref={register({ required: true, min: 8 })}
         />
 
-        
         <StylBtn type="submit">Register</StylBtn>
       </form>
     </HeadDiv>
