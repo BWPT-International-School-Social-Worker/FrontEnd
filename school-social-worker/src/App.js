@@ -27,6 +27,22 @@ function App() {
           <StudentList/>
         </Route>
         <Footer />
+<<<<<<< HEAD
+=======
+        <img
+          alt=""
+          src="https://www.ghanamakeadifference.org/uploads/2/9/4/1/29418375/1481814865.png"
+        />
+
+        {/* 
+        routes
+        landing
+        nav=privet 
+        */}
+        
+       <Form /> 
+        <h1>Register New User</h1>
+>>>>>>> 43fd8449b063a7134c51fd944efabef1eaf3ccfe
       </div>
     </userContext.Provider>
   );
