@@ -5,6 +5,7 @@ import Form from "./components/Register";
 import MainNav from "./components/MainNav";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
+import StudentList from "./components/StudentList";
 import { Route } from "react-router-dom";
 
 function App() {
@@ -21,6 +22,9 @@ function App() {
         </Route>
         <Route path="/" exact>
           <Home />
+        </Route>
+        <Route path="/student-list" exact>
+          <StudentList/>
         </Route>
         <Footer />
       </div>

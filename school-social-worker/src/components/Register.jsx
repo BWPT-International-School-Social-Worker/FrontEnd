@@ -102,7 +102,6 @@ function Form() {
           name="Password"
           ref={register({ required: true, min: 8 })}
         />
-
         <StylBtn type="submit">Register</StylBtn>
       </form>
     </headDiv>
