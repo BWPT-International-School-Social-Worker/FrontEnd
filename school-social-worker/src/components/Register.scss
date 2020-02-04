@@ -1,71 +1,89 @@
-.form-container{
-    height: 100vh;
-    width: 100%;
+.form-container {
+  height: 135vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("https://perso.liris.cnrs.fr/nicolas.bonneel/intrinsicstar/supp_materials/synthetic_dataset/ground_truth/classroom.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  
+  
+
+  .sign-up-form {
+    background-color: white;
     display: flex;
+    margin-left: 10px;
+    width: 36%;
+    height: 105vh;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    background-image:url("https://thumbs.dreamstime.com/z/classroom-ghana-west-africa-elementary-school-37449106.jpg");
-   
-   
-
-    .sign-up-form{
-        background-color: white;
-        display :flex;
-        width: 40%;
-        height:60vh;
-        flex-direction: column;
-        justify-content: center;
-        padding: 50px;
-        outline:1px solid black;
-        display: flex;
-        
-        input{
-            margin-bottom: 25px;
-            height: 35px;
-            font-size: 1.7rem;
-            padding: 5px;
-            width: 80%;
-            color:#f9b514;
-            border-radius: 2%;
-            border: none;
-            border-bottom: 2px solid #f9b514;
-            justify-content: center;
-            text-align: center;
-               
-        }
-        h1{
-            font-size: 2.8rem;
-            font-weight: bolder;
-            margin:2%;
-        }
-        p{
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-       
-        button{
-            width: 20%;
-            color: #f9b514;
-            border-radius: 5%;
-            height: 50px;
-            font-size: 2.4rem;
-            cursor: pointer;
-            &:hover{
-                font-size: 1.6rem;
-            }
-        }
-        
-        .role{
-            width:50%;
-            height:5vh;
-            margin-bottom: 2%;
-            
-            
-        }
-        label{
-            font-size:2.5rem;
-            margin-right:2%;
-        }
-
+    padding: 50px;
+    border: 5px solid grey;
+    border-radius: 20px;
+    input {
+      margin-bottom: 25px;
+      height: 45px;
+      font-size: 2rem;
+      padding: 5px;
+      width: 100%;
+      color: black;
+      border-radius: 2%;
+      border: none;
+      border-bottom: 1.5px solid #f9b514;
+      justify-content: center;
+      text-align: center;
     }
+    h1 {
+      font-size: 3.8rem;
+      font-weight: bolder;
+      margin: 2%;
+      margin-bottom: 6%;
+      color:#f9b514;
+      text-shadow: 1px 1px black;
+    }
+    p {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    button {
+      width: 20%;
+      color: #f9b514;
+      border-radius: 5%;
+      height: 50px;
+      font-size: 2.4rem;
+      cursor: pointer;
+      &:hover {
+        font-size: 1.6rem;
+        color: black;
+      }
+    }
+
+    .role {
+        color:grey;
+      width: 70%;
+      height: 5vh;
+      margin-bottom: 2%;
+      margin-left:15%;
+      position: relative;
+        font-family: Arial;
+      select{
+          margin-left:5%;
+      }
+    }
+    label {
+      font-size: 2.5rem;
+      margin-right: 2%;
+    }
+  }
+  i{
+      position: relative;
+      top:4%;
+  }
+  .user-icon{
+      margin-top:5%;
+      margin-left:40%;
+  }
 }

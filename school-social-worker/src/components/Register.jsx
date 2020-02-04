@@ -15,35 +15,57 @@ function Form() {
 
   return (
     <headDiv className="form-container">
-      <div>
-       
-      </div>
       <form className="sign-up-form" onSubmit={handleSubmit(onSubmit)}>
-      <h1>Register New User</h1>
+        <div className = "user-icon">
+          <i
+            class="fas fa-users"
+            style={{ fontSize: "70px", color: "grey" }}
+          ></i>
+        </div>
+
+        <h1>Register New User</h1>
+        <i class="fas fa-signature" style={{ fontSize: "20px", color: "grey" }}>
+          :
+        </i>
         <input
           type="text"
           placeholder="UserName"
           name="UserName"
           ref={register({ required: true, max: 15, min: 8 })}
         />
+        <i class="fas fa-signature" style={{ fontSize: "20px", color: "grey" }}>
+          :
+        </i>
         <input
           type="text"
           placeholder="First name"
           name="FirstName"
           ref={register({ required: true, maxLength: 80 })}
         />
+        <i class="fas fa-signature" style={{ fontSize: "20px", color: "grey" }}>
+          :
+        </i>
         <input
           type="text"
           placeholder="Last name"
           name="Last name"
           ref={register({ required: true, maxLength: 100 })}
         />
+        <i class="fas fa-envelope" style={{ fontSize: "20px", color: "grey" }}>
+          :
+        </i>
         <input
           type="text"
           placeholder="Email"
           name="Email"
           ref={register({ pattern: /^\S+@\S+$/i })}
         />
+        <i
+          class="fas fa-phone-square-alt"
+          style={{ fontSize: "20px", color: "grey" }}
+        >
+          :
+        </i>
         <input
           type="tel"
           placeholder="Mobile number"
@@ -62,12 +84,18 @@ function Form() {
             <option value=" Social Worker"> Social Worker</option>
           </select>
         </label>
+        <i class="fas fa-building" style={{ fontSize: "20px", color: "grey" }}>
+          :
+        </i>
         <input
           type="text"
           placeholder="Organization"
           name="Organization"
           ref={register({ required: true })}
         />
+        <i class="fas fa-lock" style={{ fontSize: "20px", color: "grey" }}>
+          :
+        </i>
         <input
           type="text"
           placeholder="Password"

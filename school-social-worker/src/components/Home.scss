@@ -1,0 +1,30 @@
+.home-container{
+    height:100vh;
+    background-image: url("https://media.npr.org/assets/img/2018/05/23/ghana-0-4_wide-ee9b1724e8f1ff91c61e71adfc1af7876911d526.jpg?s=1400");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+    h1{
+        color:#f9b514;
+      text-shadow: 2px 2px black;
+      padding-top: 2%;
+    }
+
+    .button-container{
+        width:100%;
+        height:70vh;
+        display: flex;
+        justify-content: center;
+        align-items:flex-end;
+
+        a{
+            font-size: 3.8rem;
+            font-weight: bolder;
+            margin: 2%;
+            margin-bottom: 6%;
+            color:#f9b514;
+            text-shadow: 1.5px 1.5px black;
+        }
+    }
+}
