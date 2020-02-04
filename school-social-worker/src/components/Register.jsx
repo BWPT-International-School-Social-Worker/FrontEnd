@@ -2,13 +2,7 @@ import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { userContext } from "../contexts/userContext";
 import "./Register.scss";
-<<<<<<< HEAD
 import { headDiv, StylBtn } from "../Styles/styles";
-=======
-
-import { HeadDiv, StylBtn } from "../Styles/styles";
-
->>>>>>> 43fd8449b063a7134c51fd944efabef1eaf3ccfe
 
 function Form() {
   const { user, currentUser } = useContext(userContext);
@@ -20,11 +14,7 @@ function Form() {
   console.log(errors);
 
   return (
-<<<<<<< HEAD
     <headDiv className="form-container">
-=======
-    <HeadDiv className="form-container">
->>>>>>> 43fd8449b063a7134c51fd944efabef1eaf3ccfe
       <form className="sign-up-form" onSubmit={handleSubmit(onSubmit)}>
         <div className = "user-icon">
           <i
@@ -37,10 +27,6 @@ function Form() {
         <i class="fas fa-signature" style={{ fontSize: "20px", color: "grey" }}>
           :
         </i>
-<<<<<<< HEAD
-=======
-
->>>>>>> 43fd8449b063a7134c51fd944efabef1eaf3ccfe
         <input
           type="text"
           placeholder="UserName"
@@ -87,10 +73,6 @@ function Form() {
           ref={register({ maxLength: 12 })}
         />
         <label className="role" htmlFor="role">
-<<<<<<< HEAD
-=======
-
->>>>>>> 43fd8449b063a7134c51fd944efabef1eaf3ccfe
           {" "}
           Role:
           <select
@@ -120,14 +102,9 @@ function Form() {
           name="Password"
           ref={register({ required: true, min: 8 })}
         />
-<<<<<<< HEAD
-=======
-
-        
->>>>>>> 43fd8449b063a7134c51fd944efabef1eaf3ccfe
         <StylBtn type="submit">Register</StylBtn>
       </form>
-    </HeadDiv>
+    </headDiv>
   );
 }
 
