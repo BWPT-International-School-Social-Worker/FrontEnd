@@ -5,6 +5,7 @@ import Form from "./components/Register";
 import MainNav from "./components/MainNav";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
+import StudentList from "./components/StudentList";
 import { Route } from "react-router-dom";
 
 function App() {
@@ -22,20 +23,14 @@ function App() {
         <Route path="/" exact>
           <Home />
         </Route>
+        <Route path="/student-list" exact>
+          <StudentList/>
+        </Route>
         <Footer />
-        <img
-          alt=""
-          src="https://www.ghanamakeadifference.org/uploads/2/9/4/1/29418375/1481814865.png"
-        />
-
-        {/* 
-        routes
-        landing
-        nav=privet 
-        */}
-        
-       <Form /> 
-        <h1>Register New User</h1>
+        {/* {
+          routes
+          priv = nav landing
+        } */}
       </div>
     </userContext.Provider>
   );

@@ -10,7 +10,7 @@ function Footer() {
           <li>
             <a href="https://www.facebook.com/GhanaMakeADifference/">
               <i
-                class="fab fa-facebook"
+                className="fab fa-facebook"
                 style={{ fontSize: "50px", color: "black" }}
               ></i>
             </a>
@@ -18,7 +18,7 @@ function Footer() {
           <li>
             <a href="https://www.instagram.com/ghana_make_a_difference/">
               <i
-                class="fab fa-instagram"
+                className="fab fa-instagram"
                 style={{ fontSize: "50px", color: "black" }}
               ></i>
             </a>
@@ -26,7 +26,7 @@ function Footer() {
           <li>
             <a href="https://twitter.com/ghanamakeadiff">
               <i
-                class="fab fa-twitter"
+                className="fab fa-twitter"
                 style={{ fontSize: "50px", color: "black" }}
               ></i>
             </a>

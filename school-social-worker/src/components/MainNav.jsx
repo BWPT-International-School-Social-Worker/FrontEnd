@@ -13,8 +13,15 @@ function MainNav() {
         <div className="side-nav">
           <Link to="/">Home</Link>
           <Link to = "/register">Register</Link>
-          <Link>Sign In</Link>
+          <Link to = "/student-list">Login</Link>
         </div>
+        <div className="login-container">
+    <form >
+      <input type="text" placeholder="Username" name="username"/>
+      <input type="text" placeholder="Password" name="psw"/>
+      <Link to = "/"><button type="submit">Login</button></Link>
+    </form>
+  </div>
       </nav>
     </div>
   );
