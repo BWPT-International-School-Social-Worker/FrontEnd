@@ -110,7 +110,7 @@ function Form() {
         
         <StylBtn type="submit">Register</StylBtn>
       </form>
-    </headDiv>
+    </HeadDiv>
   );
 }
 
