@@ -1,8 +1,20 @@
 import React from "react";
+import {useForm} from "react-hook-form"
 import "./MainNav.scss";
 import { Link } from "react-router-dom";
+import { axiosWithAuth } from "../utils/axiosWithAuth";
 
 function MainNav() {
+  const {handleSubmit} =useForm()
+  const loginFunc = values=>{
+    console.log(values)
+    axiosWithAuth()
+    .post("/auth/login",values)
+    .then(response => {
+      console.log(response);
+    })
+    .catch(error => console.log(error.response));
+  }
   return (
     <div className="nav-container">
       <img
@@ -16,10 +28,10 @@ function MainNav() {
           <Link to = "/student-list">Login</Link>
         </div>
         <div className="login-container">
-    <form >
+    <form onSubmit={handleSubmit(loginFunc)}>
       <input type="text" placeholder="Username" name="username"/>
-      <input type="text" placeholder="Password" name="psw"/>
-      <Link to = "/"><button type="submit">Login</button></Link>
+      <input type="text" placeholder="Password" name="password"/>
+      <button type="submit">Login</button>
     </form>
   </div>
       </nav>
