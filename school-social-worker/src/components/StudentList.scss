@@ -2,26 +2,52 @@
     height:100%;
     width:100%;
     color:black;
-    font-size: 10rem;
+    font-size: 7rem;
     display: flex;
     flex-wrap: wrap;
     background-color: whitesmoke;
-    margin-left: 8%;
+  
 
-    h1{
-        color:white;
+    .student-list-h1{
+        color:yellow;
         background-color: whitesmoke;
-        font-size: 10em;
+        font-size: 8rem;
         
       
         
+    }
+
+    span{
+       text-align: center;
+       
+    }
+
+    ul{
+        margin:3%;
+        padding:3%;
+        width:13%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        border-bottom:1px solid black;
+        li{
+            margin-bottom: 2%;
+        }
+button{
+   margin-top:5%;
+    
+ 
+}
+       
     }
 
     .student-list{
         margin:3%;
         border: 1px solid black;
         text-align: center;
-       
+    
         padding:3%;
     }
+    
 }
