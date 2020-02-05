@@ -16,14 +16,17 @@ function App() {
   return (
     <userContext.Provider value={{ user, currentUser }}>
       <div className="App">
-        <MainNav />
+        
         <Route path="/register" exact>
+          <MainNav />
           <Form />
         </Route>
         <Route path="/" exact>
+          <MainNav />
           <Home />
         </Route>
         <Route path="/student-list" exact>
+          <MainNav />
           <StudentList/>
         </Route>
         <Footer />

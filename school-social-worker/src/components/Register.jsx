@@ -24,13 +24,13 @@ function Form() {
       <form className="sign-up-form" onSubmit={handleSubmit(registerFunc)}>
         <div className="user-icon">
           <i
-            class="fas fa-users"
+            className="fas fa-users"
             style={{ fontSize: "70px", color: "grey" }}
           ></i>
         </div>
 
         <h1>Register New User</h1>
-        <i class="fas fa-signature" style={{ fontSize: "20px", color: "grey" }}>
+        <i className="fas fa-signature" style={{ fontSize: "20px", color: "grey" }}>
           :
         </i>
         <input
@@ -39,7 +39,7 @@ function Form() {
           name="username"
           ref={register({ required: true, max: 15, min: 8 })}
         />
-        <i class="fas fa-signature" style={{ fontSize: "20px", color: "grey" }}>
+        <i className="fas fa-signature" style={{ fontSize: "20px", color: "grey" }}>
           :
         </i>
         <input
@@ -48,7 +48,7 @@ function Form() {
           name="first_name"
           ref={register({ required: true, maxLength: 80 })}
         />
-        <i class="fas fa-signature" style={{ fontSize: "20px", color: "grey" }}>
+        <i className="fas fa-signature" style={{ fontSize: "20px", color: "grey" }}>
           :
         </i>
         <input
@@ -57,7 +57,7 @@ function Form() {
           name="last_name"
           ref={register({ required: true, maxLength: 100 })}
         />
-        <i class="fas fa-envelope" style={{ fontSize: "20px", color: "grey" }}>
+        <i className="fas fa-envelope" style={{ fontSize: "20px", color: "grey" }}>
           :
         </i>
         <input
