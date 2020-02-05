@@ -2,21 +2,29 @@ import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { userContext } from "../contexts/userContext";
 import "./Register.scss";
+
+
+import {axiosWithAuth}from "../utils/axiosWithAuth";
 import { headDiv, StylBtn } from "../Styles/styles";
 
 function Form() {
   const { user, currentUser } = useContext(userContext);
   const { register, handleSubmit, errors } = useForm();
-  const onSubmit = data => {
-    currentUser(data.FirstName);
-    console.log(user);
+
+  const onSubmit = values => {
+    axiosWithAuth()
+      .post("/auth/register", values)
+      .then(response => {
+        console.log(response);
+      })
+      .catch(error => console.log(error.response));
   };
   console.log(errors);
 
   return (
     <headDiv className="form-container">
       <form className="sign-up-form" onSubmit={handleSubmit(onSubmit)}>
-        <div className = "user-icon">
+        <div className="user-icon">
           <i
             class="fas fa-users"
             style={{ fontSize: "70px", color: "grey" }}
@@ -30,7 +38,7 @@ function Form() {
         <input
           type="text"
           placeholder="UserName"
-          name="UserName"
+          name="username"
           ref={register({ required: true, max: 15, min: 8 })}
         />
         <i class="fas fa-signature" style={{ fontSize: "20px", color: "grey" }}>
@@ -39,7 +47,7 @@ function Form() {
         <input
           type="text"
           placeholder="First name"
-          name="FirstName"
+          name="first_name"
           ref={register({ required: true, maxLength: 80 })}
         />
         <i class="fas fa-signature" style={{ fontSize: "20px", color: "grey" }}>
@@ -48,7 +56,7 @@ function Form() {
         <input
           type="text"
           placeholder="Last name"
-          name="Last name"
+          name="last_name"
           ref={register({ required: true, maxLength: 100 })}
         />
         <i class="fas fa-envelope" style={{ fontSize: "20px", color: "grey" }}>
@@ -57,7 +65,7 @@ function Form() {
         <input
           type="text"
           placeholder="Email"
-          name="Email"
+          name="email"
           ref={register({ pattern: /^\S+@\S+$/i })}
         />
         <i
@@ -69,7 +77,7 @@ function Form() {
         <input
           type="tel"
           placeholder="Mobile number"
-          name="Mobile number"
+          name="phone"
           ref={register({ maxLength: 12 })}
         />
         <label className="role" htmlFor="role">
@@ -77,7 +85,7 @@ function Form() {
           Role:
           <select
             className="role"
-            name="Role"
+            name="role"
             ref={register({ required: true })}
           >
             <option value="Administrator">Administrator</option>
@@ -90,7 +98,7 @@ function Form() {
         <input
           type="text"
           placeholder="Organization"
-          name="Organization"
+          name="organization"
           ref={register({ required: true })}
         />
         <i class="fas fa-lock" style={{ fontSize: "20px", color: "grey" }}>
@@ -99,9 +107,10 @@ function Form() {
         <input
           type="text"
           placeholder="Password"
-          name="Password"
+          name="password"
           ref={register({ required: true, min: 8 })}
         />
+
         <StylBtn type="submit">Register</StylBtn>
       </form>
     </headDiv>
