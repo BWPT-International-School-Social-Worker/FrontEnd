@@ -8,8 +8,8 @@ function StudentList() {
     axiosWithAuth()
       .get("/students")
       .then(response => {
-        console.log("students", response);
-        setStudents(response);
+        console.log("students", response.data);
+        setStudents(response.data);
       });
   };
   useEffect(() => {
