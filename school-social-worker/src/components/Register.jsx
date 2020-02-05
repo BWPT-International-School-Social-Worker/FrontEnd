@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
-import { userContext } from "../contexts/userContext";
 import "./Register.scss";
 
 
@@ -8,10 +7,9 @@ import {axiosWithAuth}from "../utils/axiosWithAuth";
 import { headDiv, StylBtn } from "../Styles/styles";
 
 function Form() {
-  const { user, currentUser } = useContext(userContext);
   const { register, handleSubmit, errors } = useForm();
 
-  const onSubmit = values => {
+  const registerFunc = values => {
     axiosWithAuth()
       .post("/auth/register", values)
       .then(response => {
@@ -23,7 +21,7 @@ function Form() {
 
   return (
     <headDiv className="form-container">
-      <form className="sign-up-form" onSubmit={handleSubmit(onSubmit)}>
+      <form className="sign-up-form" onSubmit={handleSubmit(registerFunc)}>
         <div className="user-icon">
           <i
             class="fas fa-users"
