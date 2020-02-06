@@ -3,8 +3,8 @@ import { useForm } from "react-hook-form";
 import "./Register.scss";
 
 
-import {axiosWithAuth}from "../utils/axiosWithAuth";
-import { StylBtn } from "../Styles/styles";
+import {axiosWithAuth}from "../../utils/axiosWithAuth";
+import { StylBtn } from "../../Styles/styles";
 
 function Form() {
   const { register, handleSubmit, errors } = useForm();

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./StudentCard.scss";
 import {Link} from "react-router-dom";
-import EditStudentForm from "./EditStudentForm";
+import EditStudentForm from "../editStudent/EditStudentForm";
 
 
 
