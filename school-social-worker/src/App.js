@@ -29,11 +29,7 @@ const getStudents = () => {
   
 
   return (
-<<<<<<< HEAD
-    <studentContext.Provider value={{ students }}>
-=======
     <studentContext.Provider value={{students, getStudents}}>
->>>>>>> 18e2845568c897e32af45fae08ad386fc7269348
       <div className="App">
         <MainNav />
         <Route path="/register" exact>
