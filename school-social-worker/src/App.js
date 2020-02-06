@@ -12,9 +12,9 @@ import {axiosWithAuth} from "./utils/axiosWithAuth"
 
 
 function App() {
-  const [students, setStudents] = useState();
+const [students, setStudents] = useState(); 
 
-  const getStudents = () => {
+const getStudents = () => {
     axiosWithAuth()
       .get("/students")
       .then(response => {
@@ -26,9 +26,10 @@ function App() {
   useEffect(() => {
     localStorage.getItem("token") && getStudents();
   }, []);
+  
 
   return (
-    <studentContext.Provider value={{students}}>
+    <studentContext.Provider value={{students, getStudents}}>
       <div className="App">
         <Route path="/register" exact>
           <MainNav />
