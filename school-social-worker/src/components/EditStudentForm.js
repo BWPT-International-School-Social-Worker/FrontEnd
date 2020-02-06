@@ -22,9 +22,9 @@ const EditStudentForm = props => {
         target="Popover1"
         toggle={toggle}
       >
-        <PopoverHeader>Popover Title</PopoverHeader>
-        <PopoverBody className = "edit-container">
-          <form className = "edit-form" onSubmit={handleSubmit(onSubmit)}>
+        <PopoverHeader>Edit</PopoverHeader>
+        <PopoverBody className="edit-container">
+          <form className="edit-form" onSubmit={handleSubmit(onSubmit)}>
             <input
               type="text"
               placeholder="First name"
@@ -61,7 +61,7 @@ const EditStudentForm = props => {
               name="age"
               ref={register({ required: true })}
             />
-            <label htmlFor = "insurance_card">Has Insurance Card?</label>
+            <label htmlFor="insurance_card">Has Insurance Card?</label>
             <input
               type="checkbox"
               placeholder="insurance card"
@@ -74,7 +74,7 @@ const EditStudentForm = props => {
               name="insurance expiration date"
               ref={register({ required: true })}
             />
-            <label htmlFor ="birth_certificate">Has birth certificate?</label>
+            <label htmlFor="birth_certificate">Has birth certificate?</label>
             <input
               type="checkbox"
               placeholder="birth certificate"

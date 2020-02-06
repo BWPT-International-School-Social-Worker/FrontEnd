@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { userContext } from "./contexts/userContext";
+import React, { useState, useEffect } from "react";
+import { studentContext } from "./contexts/studentContext";
 import "./App.scss";
 import Form from "./components/Register";
 import MainNav from "./components/MainNav";
@@ -8,15 +8,27 @@ import Home from "./components/Home";
 import StudentList from "./components/StudentList";
 import StudentCard from "./components/StudentCard";
 import { Route } from "react-router-dom";
+import {axiosWithAuth} from "./utils/axiosWithAuth"
 
 
 function App() {
-  const [user, setUser] = useState();
-  const currentUser = name => {
-    setUser(name);
+  const [students, setStudents] = useState();
+
+  const getStudents = () => {
+    axiosWithAuth()
+      .get("/students")
+      .then(response => {
+        console.log("students", response.data);
+        setStudents(response.data);
+      });
   };
+
+  useEffect(() => {
+    localStorage.getItem("token") && getStudents();
+  }, []);
+
   return (
-    <userContext.Provider value={{ user, currentUser }}>
+    <studentContext.Provider value={{students}}>
       <div className="App">
         <Route path="/register" exact>
           <MainNav />
@@ -36,12 +48,8 @@ function App() {
         </Route>
         
         <Footer />
-        {/* {
-          routes
-          priv = nav landing
-        } */}
       </div>
-    </userContext.Provider>
+    </studentContext.Provider>
   );
 }
 
