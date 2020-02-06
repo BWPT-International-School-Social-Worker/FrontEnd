@@ -20,7 +20,7 @@ export default function StudentCard(props) {
       </span>
       <li>Status: {props.kid.status}</li>
       <button >More Info</button>
-      <EditStudentForm/>
+      <EditStudentForm id={props.kid.id} student={props.kid}/>
     </ul>
 
     
