@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
 import "./Register.scss";
 
 
 import {axiosWithAuth}from "../utils/axiosWithAuth";
-import { headDiv, StylBtn } from "../Styles/styles";
+import { StylBtn } from "../Styles/styles";
 
 function Form() {
   const { register, handleSubmit, errors } = useForm();

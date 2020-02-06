@@ -1,2 +1,2 @@
 import {createContext} from "react"
-export const studentsContext = createContext();
+export const studentContext = createContext();

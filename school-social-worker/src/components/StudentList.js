@@ -1,23 +1,11 @@
-import React, { useState,useEffect } from "react";
+import React, { useContext} from "react";
 import "./StudentList.scss";
-import {axiosWithAuth} from "../utils/axiosWithAuth";
+import {studentContext} from "../contexts/studentContext"
 import { useHistory } from "react-router-dom";
 
 function StudentList() {
     const history = useHistory();
-  const [students, setStudents] = useState();
-  const getStudents = () => {
-    axiosWithAuth()
-      .get("/students")
-      .then(response => {
-        console.log("students", response.data);
-        setStudents(response.data);
-      });
-  };
-  useEffect(() => {
-    localStorage.getItem("token") &&
-    getStudents();
-  }, []);
+    const {students}=useContext(studentContext)
 
   const navigateToCard = () =>{
     history.push("./studentCard")
