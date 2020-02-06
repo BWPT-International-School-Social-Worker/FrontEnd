@@ -30,9 +30,11 @@ function Form() {
         </div>
 
         <h1>Register New User</h1>
+      
         <i className="fas fa-signature" style={{ fontSize: "20px", color: "grey" }}>
           :
         </i>
+       
         <input
           type="text"
           placeholder="UserName"

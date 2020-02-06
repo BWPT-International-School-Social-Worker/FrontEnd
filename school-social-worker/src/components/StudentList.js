@@ -1,10 +1,14 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./StudentList.scss";
-import {axiosWithAuth} from "../utils/axiosWithAuth";
+import { axiosWithAuth } from "../utils/axiosWithAuth";
 import { useHistory } from "react-router-dom";
+import StudentCard from "./StudentCard";
+
+
+
 
 function StudentList() {
-    const history = useHistory();
+  const history = useHistory();
   const [students, setStudents] = useState();
   const getStudents = () => {
     axiosWithAuth()
@@ -15,30 +19,23 @@ function StudentList() {
       });
   };
   useEffect(() => {
-    localStorage.getItem("token") &&
-    getStudents();
+    localStorage.getItem("token") && getStudents();
   }, []);
 
-  const navigateToCard = () =>{
-    history.push("./studentCard")
-  }
+  
 
+
+  
   return (
-      <div>
-          <h1 className = "student-list-h1">Our Students</h1>
-    <div className="student-container">
-
-      {students && students.map(student =>{
-          return(
-              <ul key = {student.id}>
-                  <span><li>Grade {student.grade_id}</li></span>
-                  <li>{student.first_name} {student.last_name}</li>
-                  <button onClick = {navigateToCard}>More Info</button>
-              </ul>
-          )
-      })}
-      
-    </div>
+    <div>
+      <h1 className="student-list-h1">Our Students</h1>
+      <div className="student-container">
+        {students &&
+          students.map(student => {
+            return <StudentCard key = {student.id} kid={student} name = {student.first_name} />;
+          })}
+      </div>
+   
     </div>
   );
 }

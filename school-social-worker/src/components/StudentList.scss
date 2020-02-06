@@ -2,10 +2,16 @@
     height:100%;
     width:100%;
     color:black;
-    font-size: 7rem;
     display: flex;
     flex-wrap: wrap;
     background-color: whitesmoke;
+    background-image: URL("https://library.kissclipart.com/20180901/wlq/kissclipart-high-school-hallway-cartoon-clipart-hall-cartoon-s-e94fcd1603ff60d8.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    
+    background-position: center;
+    text-shadow:  1px 1px grey;
   
 
     .student-list-h1{
@@ -22,32 +28,10 @@
        
     }
 
-    ul{
-        margin:3%;
-        padding:3%;
-        width:13%;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        border-bottom:1px solid black;
-        li{
-            margin-bottom: 2%;
-        }
-button{
-   margin-top:5%;
-    
- 
-}
-       
-    }
+   
 
-    .student-list{
-        margin:3%;
-        border: 1px solid black;
-        text-align: center;
+       
     
-        padding:3%;
-    }
-    
+
+   
 }

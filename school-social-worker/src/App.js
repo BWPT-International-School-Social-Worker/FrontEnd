@@ -6,7 +6,9 @@ import MainNav from "./components/MainNav";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
 import StudentList from "./components/StudentList";
+import StudentCard from "./components/StudentCard";
 import { Route } from "react-router-dom";
+
 
 function App() {
   const [user, setUser] = useState();
@@ -16,7 +18,6 @@ function App() {
   return (
     <userContext.Provider value={{ user, currentUser }}>
       <div className="App">
-        
         <Route path="/register" exact>
           <MainNav />
           <Form />
@@ -27,8 +28,13 @@ function App() {
         </Route>
         <Route path="/student-list" exact>
           <MainNav />
-          <StudentList/>
+          <StudentList />
         </Route>
+        <Route path="/student-card" exact>
+          <MainNav />
+          <StudentCard />
+        </Route>
+        
         <Footer />
         {/* {
           routes
