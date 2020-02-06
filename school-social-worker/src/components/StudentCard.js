@@ -19,7 +19,7 @@ export default function StudentCard(props) {
         <li>Grade {props.kid.grade_id}</li>
       </span>
       <li>Status: {props.kid.status}</li>
-      <button >More Info</button>
+      <Link to = {`/student-info/${props.kid.id}`}><button >More Info</button></Link>
       <EditStudentForm/>
     </ul>
 
