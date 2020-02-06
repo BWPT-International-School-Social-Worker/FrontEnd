@@ -6,8 +6,10 @@ import MainNav from "./components/MainNav";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
 import StudentList from "./components/StudentList";
+import StudentCard from "./components/StudentCard";
 import { Route } from "react-router-dom";
 import {axiosWithAuth} from "./utils/axiosWithAuth"
+
 
 function App() {
   const [students, setStudents] = useState();
@@ -40,6 +42,11 @@ function App() {
           <MainNav />
           <StudentList />
         </Route>
+        <Route path="/student-card" exact>
+          <MainNav />
+          <StudentCard />
+        </Route>
+        
         <Footer />
       </div>
     </studentContext.Provider>
