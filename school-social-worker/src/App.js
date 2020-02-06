@@ -8,8 +8,8 @@ import Home from "./components/Home";
 import StudentList from "./components/StudentList";
 import StudentCard from "./components/StudentCard";
 import { Route } from "react-router-dom";
-import {axiosWithAuth} from "./utils/axiosWithAuth"
-
+import { axiosWithAuth } from "./utils/axiosWithAuth";
+import StudentInfo from "./components/StudentInfo";
 
 function App() {
 const [students, setStudents] = useState(); 
@@ -29,25 +29,30 @@ const getStudents = () => {
   
 
   return (
+<<<<<<< HEAD
+    <studentContext.Provider value={{ students }}>
+=======
     <studentContext.Provider value={{students, getStudents}}>
+>>>>>>> 18e2845568c897e32af45fae08ad386fc7269348
       <div className="App">
+        <MainNav />
         <Route path="/register" exact>
-          <MainNav />
           <Form />
         </Route>
         <Route path="/" exact>
-          <MainNav />
           <Home />
         </Route>
         <Route path="/student-list" exact>
-          <MainNav />
           <StudentList />
         </Route>
         <Route path="/student-card" exact>
-          <MainNav />
           <StudentCard />
         </Route>
-        
+        <Route
+          path={`/student-info/:id`}
+          render={props => <StudentInfo {...props} />}
+        />
+
         <Footer />
       </div>
     </studentContext.Provider>
