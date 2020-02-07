@@ -1,17 +1,13 @@
 .edit-container{
     width:250px;
-  background-color: white;
+  background-color: grey;
   display: flex;
   justify-content: center;
-
-  
 
     .edit-form{
         display:flex;
         flex-direction: column;
         width:70%;
-        color:black;
-       
         
 
         input{

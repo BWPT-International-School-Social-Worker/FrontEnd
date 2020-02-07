@@ -2,7 +2,8 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import "./Register.scss";
 
-import { axiosWithAuth } from "../utils/axiosWithAuth";
+
+import {axiosWithAuth}from "../utils/axiosWithAuth";
 import { StylBtn } from "../Styles/styles";
 
 function Form() {
@@ -29,24 +30,18 @@ function Form() {
         </div>
 
         <h1>Register New User</h1>
-
-        <i
-          className="fas fa-signature"
-          style={{ fontSize: "20px", color: "grey" }}
-        >
+      
+        <i className="fas fa-signature" style={{ fontSize: "20px", color: "grey" }}>
           :
         </i>
-
+       
         <input
           type="text"
           placeholder="UserName"
           name="username"
           ref={register({ required: true, max: 15, min: 8 })}
         />
-        <i
-          className="fas fa-signature"
-          style={{ fontSize: "20px", color: "grey" }}
-        >
+        <i className="fas fa-signature" style={{ fontSize: "20px", color: "grey" }}>
           :
         </i>
         <input
@@ -55,10 +50,7 @@ function Form() {
           name="first_name"
           ref={register({ required: true, maxLength: 80 })}
         />
-        <i
-          className="fas fa-signature"
-          style={{ fontSize: "20px", color: "grey" }}
-        >
+        <i className="fas fa-signature" style={{ fontSize: "20px", color: "grey" }}>
           :
         </i>
         <input
@@ -67,10 +59,7 @@ function Form() {
           name="last_name"
           ref={register({ required: true, maxLength: 100 })}
         />
-        <i
-          className="fas fa-envelope"
-          style={{ fontSize: "20px", color: "grey" }}
-        >
+        <i className="fas fa-envelope" style={{ fontSize: "20px", color: "grey" }}>
           :
         </i>
         <input
