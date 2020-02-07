@@ -7,14 +7,14 @@ import { axiosWithAuth } from "../utils/axiosWithAuth";
 function MainNav(props) {
   const { handleSubmit, register } = useForm();
   const loginFunc = values => {
-    console.log("credentials",values);
+    console.log("credentials", values);
     axiosWithAuth()
       .post("/auth/login", values)
       .then(response => {
-        console.log(response.data.token)
-        localStorage.setItem("token", response.data.token)
-        props.history.push(`/home`)
-    })
+        console.log(response.data.token);
+        localStorage.setItem("token", response.data.token);
+        props.history.push(`/home`);
+      })
       .catch(error => console.log(error.response));
   };
   return (
@@ -27,7 +27,7 @@ function MainNav(props) {
         <div className="side-nav">
           <Link to="/">Home</Link>
           <Link to="/register">Register</Link>
-          <Link to="/student-list">Login</Link>
+          <Link to="/add-student">Login</Link>
         </div>
         <div className="login-container">
           <form onSubmit={handleSubmit(loginFunc)}>
