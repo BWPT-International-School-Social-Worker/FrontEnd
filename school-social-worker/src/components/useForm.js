@@ -21,8 +21,8 @@ const useForm = (callback) =>{
     
       const handleChanges = e =>{
         const {name,value} = e.target;
-          console.log(e.target.name);
-          console.log(e.target.value);
+          // console.log(e.target.name);
+          // console.log(e.target.value);
           setValues({
               ...values,
               [name]: value
