@@ -18,6 +18,9 @@ function StudentInfo(props) {
       <h1>
         {student && student.first_name} {student && student.last_name}
       </h1>
+      <div>
+          
+      </div>
     </div>
   );
 }
