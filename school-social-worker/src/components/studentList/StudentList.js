@@ -1,8 +1,8 @@
 import React, { useContext} from "react";
 import "./StudentList.scss";
-import {studentContext} from "../contexts/studentContext"
+import {studentContext} from "../../contexts/studentContext"
 import { useHistory } from "react-router-dom";
-import StudentCard from "./StudentCard";
+import StudentCard from "../studentCard/StudentCard";
 
 
 
@@ -10,10 +10,6 @@ import StudentCard from "./StudentCard";
 function StudentList() {
     const history = useHistory();
     const {students}=useContext(studentContext)
-
-  
-
-
   
   return (
     <div>
