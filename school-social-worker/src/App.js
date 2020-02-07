@@ -38,16 +38,20 @@ function App() {
         <Route path="/" exact>
           <Home />
         </Route>
-        <Route path="/add-student" exact>
-          <AddStudentForm />
+        <Route path="/student-list" exact>
+          <StudentList />
         </Route>
         <Route path="/student-card" exact>
           <StudentCard />
         </Route>
         <Route
-          path={`/student-info/:id`}
+          exact path={`/student-info/:id`}
           render={props => <StudentInfo {...props} />}
         />
+
+        <Route path="/add-form" exact>
+          <AddStudentForm />
+        </Route>
 
         <Footer />
       </div>
