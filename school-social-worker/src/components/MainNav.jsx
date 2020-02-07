@@ -2,7 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import "./MainNav.scss";
 import { Link } from "react-router-dom";
-import { axiosWithAuth } from "../../utils/axiosWithAuth";
+import { axiosWithAuth } from "../utils/axiosWithAuth";
 
 function MainNav(props) {
   const { handleSubmit, register } = useForm();
@@ -39,7 +39,7 @@ function MainNav(props) {
             />
             <input
               ref={register}
-              type="text"
+              type="password"
               placeholder="Password"
               name="password"
             />
