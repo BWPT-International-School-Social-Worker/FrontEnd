@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useContext} from "react";
 import { Button, Popover, PopoverHeader, PopoverBody } from "reactstrap";
 import { useForm } from "react-hook-form";
-import { axiosWithAuth } from "../../utils/axiosWithAuth";
+import { axiosWithAuth } from "../utils/axiosWithAuth";
 import "./EditForm.scss";
-import { studentContext } from "../../contexts/studentContext";
+import { studentContext } from "../contexts/studentContext";
 
 const EditStudentForm = props => {
   const [popoverOpen, setPopoverOpen] = useState(false);
