@@ -1,10 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import "./Register.scss";
-
 
 import {axiosWithAuth}from "../../utils/axiosWithAuth";
-import { StylBtn } from "../../Styles/styles";
 
 function Form() {
   const { register, handleSubmit, errors } = useForm();
@@ -20,7 +17,6 @@ function Form() {
   console.log(errors);
 
   return (
-    <headDiv className="form-container">
       <form className="sign-up-form" onSubmit={handleSubmit(registerFunc)}>
         <div className="user-icon">
           <i
@@ -69,7 +65,7 @@ function Form() {
           ref={register({ pattern: /^\S+@\S+$/i })}
         />
         <i
-          class="fas fa-phone-square-alt"
+          className="fas fa-phone-square-alt"
           style={{ fontSize: "20px", color: "grey" }}
         >
           :
@@ -92,7 +88,7 @@ function Form() {
             <option value=" Social Worker"> Social Worker</option>
           </select>
         </label>
-        <i class="fas fa-building" style={{ fontSize: "20px", color: "grey" }}>
+        <i className="fas fa-building" style={{ fontSize: "20px", color: "grey" }}>
           :
         </i>
         <input
@@ -101,7 +97,7 @@ function Form() {
           name="organization"
           ref={register({ required: true })}
         />
-        <i class="fas fa-lock" style={{ fontSize: "20px", color: "grey" }}>
+        <i className="fas fa-lock" style={{ fontSize: "20px", color: "grey" }}>
           :
         </i>
         <input
@@ -111,9 +107,8 @@ function Form() {
           ref={register({ required: true, min: 8 })}
         />
 
-        <StylBtn type="submit">Register</StylBtn>
+        <button type="submit">Register</button>
       </form>
-    </headDiv>
   );
 }
 

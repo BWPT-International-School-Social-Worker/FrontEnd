@@ -1,5 +1,4 @@
 import React, { useContext} from "react";
-import "./StudentList.scss";
 import {studentContext} from "../../contexts/studentContext"
 import { useHistory } from "react-router-dom";
 import StudentCard from "../studentCard/StudentCard";

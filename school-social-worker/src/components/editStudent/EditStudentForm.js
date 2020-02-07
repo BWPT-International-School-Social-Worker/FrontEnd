@@ -2,44 +2,30 @@ import React, { useState, useEffect, useContext} from "react";
 import { Button, Popover, PopoverHeader, PopoverBody } from "reactstrap";
 import { useForm } from "react-hook-form";
 import { axiosWithAuth } from "../../utils/axiosWithAuth";
-import "./EditForm.scss";
 import { studentContext } from "../../contexts/studentContext";
 
 const EditStudentForm = props => {
   const [popoverOpen, setPopoverOpen] = useState(false);
-  const [student, setStudent] = useState();
-  const {getStudents}=useContext(studentContext)
   const toggle = () => setPopoverOpen(!popoverOpen);
   const { register, handleSubmit, errors } = useForm();
-  const onSubmit = data => console.log(data);
   // console.log(errors);
 
-  const getStudent = () => {
-    axiosWithAuth()
-      .get(`/students/${props.id}`)
-      .then(response => {
-        console.log("student", response.data);
-        setStudent(response.data);
-      });
-  };
+  
   
 
   const editFunc = (value) => {
     axiosWithAuth()
       .put(`/students/${props.id}`,value)
       .then(response => {
-        getStudents()
-        .catch(error => console.log(error.response));
-      });
-    
+      })
+    .catch(error => console.log(error.response));
   };
 
-  useEffect(() => {
-    localStorage.getItem("token") && getStudent();
-  }, []);
-
+ 
   return (
+    
     <div>
+
       <Button id="Popover1" type="button">
         Edit Student Info
       </Button>
@@ -57,6 +43,7 @@ const EditStudentForm = props => {
               placeholder={`${props.student.first_name}`}
               name="first_name"
               ref={register}
+              value={props.student.first_name}
             />
             <input
               type="text"
