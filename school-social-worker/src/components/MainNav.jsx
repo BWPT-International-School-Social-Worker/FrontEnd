@@ -39,7 +39,7 @@ function MainNav(props) {
             />
             <input
               ref={register}
-              type="text"
+              type="password"
               placeholder="Password"
               name="password"
             />

@@ -10,11 +10,12 @@ import StudentCard from "./components/StudentCard";
 import { Route } from "react-router-dom";
 import { axiosWithAuth } from "./utils/axiosWithAuth";
 import StudentInfo from "./components/StudentInfo";
+import AddStudentForm from "./components/AddStudentForm";
 
 function App() {
-const [students, setStudents] = useState(); 
+  const [students, setStudents] = useState();
 
-const getStudents = () => {
+  const getStudents = () => {
     axiosWithAuth()
       .get("/students")
       .then(response => {
@@ -26,14 +27,9 @@ const getStudents = () => {
   useEffect(() => {
     localStorage.getItem("token") && getStudents();
   }, []);
-  
 
   return (
-<<<<<<< HEAD
-    <studentContext.Provider value={{ students }}>
-=======
-    <studentContext.Provider value={{students, getStudents}}>
->>>>>>> 18e2845568c897e32af45fae08ad386fc7269348
+    <studentContext.Provider value={{ students, getStudents }}>
       <div className="App">
         <MainNav />
         <Route path="/register" exact>
@@ -49,9 +45,13 @@ const getStudents = () => {
           <StudentCard />
         </Route>
         <Route
-          path={`/student-info/:id`}
+          exact path={`/student-info/:id`}
           render={props => <StudentInfo {...props} />}
         />
+
+        <Route path="/add-form" exact>
+          <AddStudentForm />
+        </Route>
 
         <Footer />
       </div>
