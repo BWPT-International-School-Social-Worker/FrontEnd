@@ -5,15 +5,12 @@ import { axiosWithAuth } from "../../utils/axiosWithAuth";
 import { studentContext } from "../../contexts/studentContext";
 
 const EditStudentForm = props => {
-  const [popoverOpen, setPopoverOpen] = useState(false);
-  const toggle = () => setPopoverOpen(!popoverOpen);
   const { register, handleSubmit, errors } = useForm();
   // console.log(errors);
 
   const editFunc = value => {
     axiosWithAuth()
       .put(`/students/${props.id}`, value)
-      .then(response => {})
       .catch(error => console.log(error.response));
   };
 

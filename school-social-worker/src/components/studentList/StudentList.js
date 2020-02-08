@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { studentContext } from "../../contexts/studentContext";
 import StudentCard from "../studentCard/StudentCard";
+import { Link } from "react-router-dom";
 
 function StudentList() {
   const { students } = useContext(studentContext);
@@ -11,7 +12,11 @@ function StudentList() {
       <div className="student-container">
         {students &&
           students.map(student => {
-            return <StudentCard key={student.id} student={student} />;
+            return (
+              <Link to={`/student/${student.id}`}>
+                <StudentCard key={student.id} student={student} />
+              </Link>
+            );
           })}
       </div>
     </div>

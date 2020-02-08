@@ -17,19 +17,7 @@ export default function StudentCard(props) {
           <li>Grade {props.student.grade_id}</li>
         </span>
         <li>Status: {props.student.status}</li>
-        <button>More Info</button>
-        <Link to={`/edit/${props.student.id}`}>
-          <button>Edit Student</button>
-        </Link>
-        <button>Delete Student</button>
       </ul>
-
-      <Route
-        path="/edit/:id"
-        render={props => {
-          return <EditStudentForm {...props} />;
-        }}
-      ></Route>
     </div>
   );
 }
