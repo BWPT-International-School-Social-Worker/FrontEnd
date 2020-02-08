@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
-import StudentList from "../studentList/StudentList";
-import AddStudent from "../addStudent/AddStudentForm";
-import EditStudentForm from "../editStudent/EditStudentForm";
-import Student from "../student/Student";
+import StudentList from "./StudentList";
+import AddStudent from "./AddStudentForm";
+import EditStudentForm from "./EditStudentForm";
+import Student from "./Student";
 
 function Routes() {
   return (
@@ -15,7 +15,7 @@ function Routes() {
               <Link to="/students">My Students</Link>
             </li>
             <li>
-              <Link to="/newstudent">AddStudent</Link>
+              <Link to="/newstudent">Add Student</Link>
             </li>
           </ul>
           <Switch>

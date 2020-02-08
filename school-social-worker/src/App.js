@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { studentContext } from "./contexts/studentContext";
-import Routes from "./components/routes/Routes";
+import Routes from "./components/Routes";
 import { axiosWithAuth } from "./utils/axiosWithAuth";
+import Footer from "./components/Footer"
 
 function App() {
 
@@ -23,9 +24,9 @@ function App() {
 
   return (
     <studentContext.Provider value={{ students, getStudents }}>
-      <div>
+    
         <Routes>routes</Routes>
-      </div>
+        <Footer></Footer>
     </studentContext.Provider>
   );
 }

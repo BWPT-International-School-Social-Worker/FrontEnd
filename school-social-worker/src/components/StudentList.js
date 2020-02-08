@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import { studentContext } from "../../contexts/studentContext";
-import StudentCard from "../studentCard/StudentCard";
+import { studentContext } from "../contexts/studentContext";
+import StudentCard from "./StudentCard";
 import { Link } from "react-router-dom";
 
 function StudentList() {

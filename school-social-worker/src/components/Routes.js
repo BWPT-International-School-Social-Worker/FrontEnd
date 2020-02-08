@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import Landing from "../landing/Landing";
-import Navigation from "../nav/Navigation";
+import Landing from "./Landing";
+import Navigation from "./Navigation";
 import PrivateRoute from "./PrivetRoute";
 
 function Routes() {

@@ -1,7 +1,7 @@
 import React, {useContext } from "react";
 import { useForm } from "react-hook-form";
-import { axiosWithAuth } from "../../utils/axiosWithAuth";
-import { studentContext } from "../../contexts/studentContext";
+import { axiosWithAuth } from "../utils/axiosWithAuth";
+import { studentContext } from "../contexts/studentContext";
 
 const EditStudentForm = () => {
   const { getStudents } = useContext(studentContext);

@@ -2,7 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import {useHistory} from "react-router-dom"
 
-import {axiosWithAuth}from "../../utils/axiosWithAuth";
+import {axiosWithAuth}from "../utils/axiosWithAuth";
 
 function Form() {
   const { register, handleSubmit, errors } = useForm();
