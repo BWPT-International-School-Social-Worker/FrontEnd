@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import StudentList from "../studentList/StudentList";
 import AddStudent from "../addStudent/AddStudentForm";
 import EditStudentForm from "../editStudent/EditStudentForm";
-import Student from "../student/Student"
+import Student from "../student/Student";
 
 function Routes() {
   return (
@@ -22,7 +22,7 @@ function Routes() {
             <Route path="/students">
               <StudentList></StudentList>
             </Route>
-            <Route path="/newstudents">
+            <Route path="/newstudent">
               <AddStudent></AddStudent>
             </Route>
             <Route

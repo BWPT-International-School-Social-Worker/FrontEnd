@@ -1,6 +1,4 @@
 import React from "react";
-import { Link, Route, Router } from "react-router-dom";
-import EditStudentForm from "../editStudent/EditStudentForm";
 
 export default function StudentCard(props) {
   const student = props.student;

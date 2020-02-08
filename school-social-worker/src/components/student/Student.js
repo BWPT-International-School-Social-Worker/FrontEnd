@@ -1,10 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useContext } from "react";
 import { axiosWithAuth } from "../../utils/axiosWithAuth";
 import { Link } from "react-router-dom";
+import {useHistory} from "react-router-dom"
+import { studentContext } from "../../contexts/studentContext";
 
 function Student(props) {
   const [currentStudent, setCurrentStudent] = useState({});
   const id = props.match.params.id;
+  const history = useHistory()
+  const { getStudents } = useContext(studentContext);
 
   const getStudent = () => {
     axiosWithAuth()
@@ -12,12 +16,24 @@ function Student(props) {
       .then(response => {
         console.log(response.data);
         setCurrentStudent(response.data);
-      });
+      })
+      .catch(error => console.log(error.response));
+  };
+
+  const deleteFunc = () => {
+    axiosWithAuth()
+      .delete(`/students/${id}`)
+      .then(response => {
+        console.log(response.data)
+        history.push("/home")
+        getStudents()
+      })
+      .catch(error => console.log(error.response));
   };
 
   useEffect(() => {
     getStudent();
-  }, []);
+  }, );
 
   return (
     <div>
@@ -25,6 +41,7 @@ function Student(props) {
         {currentStudent.first_name} {currentStudent.last_name}
       </h4>
       <Link to={`/edit/${id}`}>Edit</Link>
+      <button onClick={deleteFunc} >Delete</button>
     </div>
   );
 }

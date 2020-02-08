@@ -9,7 +9,6 @@ function Login () {
 
   const loginFunc = values => {
     console.log("credentials", values);
-    const token = localStorage.getItem("token");
     axiosWithAuth()
       .post("/auth/login", values)
       .then(response => {
