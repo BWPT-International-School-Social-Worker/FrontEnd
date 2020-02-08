@@ -1,27 +1,24 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { axiosWithAuth } from "../../utils/axiosWithAuth";
-import { Redirect } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
-
-function Login (props) {
-
+function Login () {
   const { handleSubmit, register } = useForm();
-
+  const history = useHistory();
 
   const loginFunc = values => {
     console.log("credentials", values);
+    const token = localStorage.getItem("token");
     axiosWithAuth()
       .post("/auth/login", values)
       .then(response => {
         console.log(response.data.token);
         localStorage.setItem("token", response.data.token);
-        return <Redirect to="/home"/>
+        history.push("/home");
       })
       .catch(error => console.log(error.response));
   };
-
-  
 
   return (
     <div>
