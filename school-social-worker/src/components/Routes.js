@@ -9,7 +9,6 @@ function Routes() {
   return (
     <div>
       <Router>
-        routes
         <Route exact path="/">
           <Landing></Landing>
         </Route>
