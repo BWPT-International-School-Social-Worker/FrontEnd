@@ -1,105 +1,120 @@
-import React, { useState } from "react";
 import "./AddStudentForm.scss";
-import useForm from "./useForm";
 
-function AddStudentForm() {
-    const{handleChanges,handleSubmit,values} = useForm(submit);
-  
+import React, {useContext } from "react";
+import { useForm } from "react-hook-form";
+import { axiosWithAuth } from "../utils/axiosWithAuth";
+import { studentContext } from "../contexts/studentContext";
 
-  function submit() {
-      console.log("submitted successfully")
-  }
+const EditStudentForm = () => {
+  const { getStudents } = useContext(studentContext);
+
+  const { register, handleSubmit } = useForm({
+    defaultValues: {
+      first_name: "testStudent21",
+      last_name: "testStudentPassword",
+      grade_id: "11",
+      background_story: "background story",
+      status: "student",
+      age: 16,
+      insurance_card: 1,
+      insurance_expiration_date: "12-31-2020",
+      birth_certificate: 1,
+      special_needs: "special needs",
+      representative: "representative's name",
+      contact_info: "contact information",
+      visit_id: 3
+    }
+  });
+
+  const addFunc = value => {
+    console.log(value);
+    axiosWithAuth()
+      .post(`/students`, value)
+      .then(response => {
+        console.log(response);
+        getStudents();
+      })
+      .catch(error => console.log(error.response));
+  };
 
   return (
     <div>
-      <form onSubmit = {handleSubmit} noValidate>
-        <div>
-          <div>
-            <label>First Name of New Student</label>
-          </div>
-          <input name="first_name" type="text" value = {values.first_name} onChange = {handleChanges}/>
-        </div>
-        <div>
-          <div>
-            <label>Last Name of New Student</label>
-          </div>
-          <input name="last_name" type="text" value = {values.last_name} onChange = {handleChanges}/>
-        </div>
-        <div>
-          <div>
-            <label>Current Grade of New Student</label>
-          </div>
-          <input name="grade_id" type="number" placeholder="select a number" value = {values.grade_id} onChange = {handleChanges}/>
-        </div>
-        <div>
-          <div>
-            <label>Background Bio of New Student</label>
-          </div>
-          <input name="background_story" type="text" value = {values.background_story} onChange = {handleChanges}/>
-        </div>
-        <div>
-          <div>
-            <label>Current status of New Student</label>
-          </div>
-          <select name="status" type="text" value = {values.status} onChange = {handleChanges}>
-            <option value={"student"}>Student</option>
-            <option value={"past student"}>Former Student</option>
-            <option value={"visitor"}>Visitor</option>
-          </select>
-        </div>
-        <div>
-          <div>
-            <label>Current Age of New Student</label>
-          </div>
-          <input name="age" type="number" placeholder="select a number" value = {values.age} onChange = {handleChanges}/>
-        </div>
+      <form className="edit-form" onSubmit={handleSubmit(addFunc)}>
+        <input
+          type="text"
+          placeholder="first_name"
+          name="first_name"
+          ref={register}
+        />
+        <input
+          type="text"
+          placeholder="last_name"
+          name="last_name"
+          ref={register}
+        />
+        <input
+          type="number"
+          placeholder="grade_id"
+          name="grade_id"
+          ref={register}
+        />
+        <input
+          type="text"
+          placeholder="background_story"
+          name="background_story"
+          ref={register}
+        />
+        <input
+          type="text"
+          placeholder="status"
+          name="status"
+          ref={register}
+        />
+        <input
+          type="number"
+          placeholder="age"
+          name="age"
+          ref={register}
+        />
+        <label htmlFor="insurance_card">Has Insurance Card?</label>
+        <input type="checkbox" name="insurance_card" ref={register} />
+        <input
+          type="datetime"
+          placeholder="insurance_expiration_date"
+          name="insurance_expiration_date"
+          ref={register}
+        />
+        <label htmlFor="birth_certificate">Has birth certificate?</label>
+        <input type="checkbox" name="birth_certificate" ref={register} />
+        <input
+          type="text"
+          placeholder="birth_certificate"
+          name="special_needs"
+          ref={register}
+        />
+        <input
+          type="text"
+          placeholder="representative"
+          name="representative"
+          ref={register}
+        />
+        <input
+          type="text"
+          placeholder="contact_info"
+          name="contact_info"
+          ref={register}
+        />
+        <input
+          type="number"
+          placeholder="visit_id"
+          name="visit_id"
+          ref={register}
+        />
 
-        <div>
-          <div>
-            <label>Does student have insurance?</label>
-          </div>
-          <input name="insurance_card" type="checkbox" value = {values.insurance_card} onChange = {handleChanges} />
-        </div>
-        <div>
-          <div>
-            <label>Insurance Expiration Date</label>
-          </div>
-          <input name="insurance_expiration_date" type="text" value = {values.insurance_expiration_date} onChange = {handleChanges}/>
-        </div>
-        <div>
-          <div>
-            <label>Does student have birth certificate?</label>
-          </div>
-          <input name="birth_certificate" type="checkbox" value = {values.birth_certificate} onChange = {handleChanges}/>
-        </div>
-        <div>
-          <div>
-            <label>Please List any special needs the student might have</label>
-          </div>
-          <input name="special_needs" type="text"  value = {values.special_needs} onChange = {handleChanges}/>
-        </div>
-        <div>
-          <div>
-            <label>Name of representative</label>
-          </div>
-          <input name="representative" type="text" value = {values.representative} onChange = {handleChanges}/>
-        </div>
-        <div>
-          <div>
-            <label>Current contact information of New Student</label>
-          </div>
-          <input name="contact_info" type="text" value = {values.contact_info} onChange = {handleChanges}/>
-        </div>
-        <div>
-          <div>
-            <label>Number of visits to date</label>
-          </div>
-          <input name="visit_id" type="number" value = {values.visit_id} onChange = {handleChanges}/>
-        </div>
-        <button type="sumbit">Submit</button>
+        <input type="submit" />
       </form>
     </div>
   );
-}
+};
 
-export default AddStudentForm;
+export default EditStudentForm;
