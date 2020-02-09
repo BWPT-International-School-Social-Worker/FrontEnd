@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Link, Switch  } from "react-router-dom"
 import Login from "./Login";
 import Register from "./Register";
 import "./MainNav.scss"
+import Navigation from "./Navigation";
+import PrivateRoute from "./PrivetRoute";
 
 function Landing() {
   return (
@@ -24,6 +26,9 @@ function Landing() {
           <Route path="/register">
             <Register></Register>
           </Route>
+          <PrivateRoute exact path="/home">
+          <Navigation></Navigation>
+        </PrivateRoute>
         </Switch>
       </div>
     </Router>
