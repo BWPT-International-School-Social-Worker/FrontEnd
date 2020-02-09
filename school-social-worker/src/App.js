@@ -1,16 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { studentContext } from "./contexts/studentContext";
-import "./App.scss";
-import Form from "./components/Register";
-import MainNav from "./components/MainNav";
-import Footer from "./components/Footer";
-import Home from "./components/Home";
-import StudentList from "./components/StudentList";
-import StudentCard from "./components/StudentCard";
-import { Route } from "react-router-dom";
+import Routes from "./components/Routes";
 import { axiosWithAuth } from "./utils/axiosWithAuth";
-import StudentInfo from "./components/StudentInfo";
-import AddStudentForm from "./components/AddStudentForm";
+import Footer from "./components/Footer";
 
 function App() {
   const [students, setStudents] = useState();
@@ -21,7 +13,8 @@ function App() {
       .then(response => {
         console.log("students", response.data);
         setStudents(response.data);
-      });
+      })
+      .catch(error => console.log(error.response));
   };
 
   useEffect(() => {
@@ -30,31 +23,8 @@ function App() {
 
   return (
     <studentContext.Provider value={{ students, getStudents }}>
-      <div className="App">
-        <MainNav />
-        <Route path="/register" exact>
-          <Form />
-        </Route>
-        <Route path="/" exact>
-          <Home />
-        </Route>
-        <Route path="/student-list" exact>
-          <StudentList />
-        </Route>
-        <Route path="/student-card" exact>
-          <StudentCard />
-        </Route>
-        <Route
-          exact path={`/student-info/:id`}
-          render={props => <StudentInfo {...props} />}
-        />
-
-        <Route path="/add-form" exact>
-          <AddStudentForm />
-        </Route>
-
-        <Footer />
-      </div>
+      <Routes/>
+      <Footer></Footer>
     </studentContext.Provider>
   );
 }

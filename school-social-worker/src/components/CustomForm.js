@@ -1,7 +1,7 @@
 import {useState} from "react";
 
 
-const useForm = (callback) =>{
+const CustomForm = (callback) =>{
 
     const [values, setValues] = useState({
         first_name: "",
@@ -47,4 +47,4 @@ const useForm = (callback) =>{
 
 }
 
-export default useForm;
+export default CustomForm;

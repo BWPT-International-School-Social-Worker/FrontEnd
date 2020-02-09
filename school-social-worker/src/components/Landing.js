@@ -1,2 +1,28 @@
-//This will contain two options. One button to be taken to the "login form" and one to take the user to the "register form".
-//This is the first thing the user sees when entering the app
+import React from "react";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import Login from "./Login";
+import Register from "./Register";
+import HomePage from "./HomePage";
+
+function Landing() {
+  return (
+    <Router>
+      <div>
+        
+        <Switch>
+          <Route exact path="/">
+            <HomePage />
+          </Route>
+          <Route exact path="/login">
+            <Login></Login>
+          </Route>
+          <Route exact path="/register">
+            <Register></Register>
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+  );
+}
+
+export default Landing;

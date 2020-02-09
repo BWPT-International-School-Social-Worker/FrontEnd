@@ -21,10 +21,10 @@ a {
 
   &:hover{
       color:#f9b514;
-      border-top:1px solid black;
-      border-bottom:1px solid black;
-      transform: scale3d(1.2, 1.2, 1) rotate(360deg);
+     
+      transform: scale3d(1.4, 1.4, 1) rotate(360deg);
       text-shadow: 1px 1px black;
+      text-decoration: none;
   }
 }
 

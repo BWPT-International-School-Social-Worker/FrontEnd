@@ -1,2 +1,45 @@
-//A "login" form 
-// only needs username and password
+import React from "react";
+import { useForm } from "react-hook-form";
+import { axiosWithAuth } from "../utils/axiosWithAuth";
+import { useHistory } from "react-router-dom";
+import MainNav from "./MainNav";
+
+function Login () {
+  const { handleSubmit, register } = useForm();
+  const history = useHistory();
+
+  const loginFunc = values => {
+    console.log("credentials", values);
+    axiosWithAuth()
+      .post("/auth/login", values)
+      .then(response => {
+        console.log(response.data.token);
+        localStorage.setItem("token", response.data.token);
+        history.push("/home");
+      })
+      .catch(error => console.log(error.response));
+  };
+
+  return (
+    <div>
+      <MainNav/>
+      <form onSubmit={handleSubmit(loginFunc)}>
+        <input
+          ref={register}
+          type="text"
+          placeholder="Username"
+          name="username"
+        />
+        <input
+          ref={register}
+          type="password"
+          placeholder="Password"
+          name="password"
+        />
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  );
+}
+
+export default Login;
