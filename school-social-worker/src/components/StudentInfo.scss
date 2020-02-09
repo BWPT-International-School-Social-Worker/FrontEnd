@@ -1,0 +1,21 @@
+.student-info-container{
+    height:100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("https://f0.pngfuel.com/png/520/413/white-chalks-and-black-chalkboard-png-clip-art.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    .details-container{
+        height:100%;
+        display: flex;
+        justify-content: center;
+
+        li{
+            font-size: 3rem;
+            color:yellow;
+        }
+    }
+}

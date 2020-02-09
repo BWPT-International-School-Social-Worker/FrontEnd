@@ -1,3 +1,38 @@
+.add-container{
+    display: flex;
+    justify-content:center;
+    flex-direction: column;
+    align-items: center;
+    width:100%;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARMAAAC3CAMAAAAGjUrGAAAAk1BMVEUAaz/OESb80RYAAADKACf/2hUAYUH/1xFHOwb/1Bb/1hf/0xbjvBT3zRb6zxZSRAd/aQvowBSrjg/CoRG7mxBfTwiOdg3/3Remig4NCgHwxxXXsxO0lRDlvhQqIwRxXgrAACSPfwu4oA44LwVtWgkzKgXPrBIZFANaSwgjHQNKPQaFbwyhhQ7IphKVew0bFgJBNgaQrcu5AAADxklEQVR4nO3ba1PaQBiG4TTbFHaXg0EOJlGxFc+o/P9fV5RT4ksC2uk+74zP9VGd6XIPe2BDox/0UYQegEJsIrGJxCYSm0hsIrGJxCYSm0hsIrGJxCYSm0hsIrGJxCYSm0hsIrGJxCYSm0hsIrGJxCYSm0hsIrGJxCYSm0hsIrGJxCYSm0hsIrGJxCYSm0hsIrGJxCYSm0hsIrGJxCYSm0hsIrGJxCYSm0hsIrGJxCYSm0hsIrGJxCYSm0hsIrGJFP1U4uoKPYKtKNFh8vvPBD2GjSjWodc/8egxbChp4oss66IHsaGkiTsz5tShR7GmpEnSNmbKJmU+N8Zcp0pWFB1N3GDZRM3k0dEknr41mSXoYayoaPI+dZbQ41hT0cQNV02GOiaPiibJbNVEybFNQxOf3qyaZLmKKBqauFOzpmPn0dCkdbJpomPnUdFkk8RcdjRMHgVN7O22iY6dR0ETN941GWmYPAqa5O1dExXHNnwTX5SSmHMFkwffpDx1jJmihxNraGIX5SZ3Ci4M4E1scVduomHnCdbEu/2X5JOzShJzX3N9HzBVqCa+M1u093l8qDbJHvf+2fVTHmikAd8nNp+af/DUC7fOhFtPfDJ8OPza97u+DXmWC7nGus7oa0lGuQ04zLD7jq2eRY418GH358B7sSvahxtUtTuhd+fQ55NPL7UnefADS/Azm3fD7BNJhi78uRZwjnXp0UvtqBN0cV1DnO1tb35cknEPkQT0ead1zFJ78wy6YAJ9BnT5wV151IW8SWLc52KfnDcvtWcx7NIAd1fg8ll9kXanBRsY8v7Exy+1SVLkLQryTqlV2+S1QN62QZu81q8m3/R9YovaJGaBfM4DbOKaTm4XwMkDbNLtNzSZAycProlPG5KYe+A3iIHnk+YPPcDJg2ti7xubvOAmD6yJLz7cWH9YXfqoTzvAJu68un5cTAaVB4LZLSwKrElSeV+Mlx+CbadygYDbeXDrSenl362+22e75QuES9ixDdWkPHV2NyWt4mb3Y9h322D3J9vvOpp56bGnS3fX+rCdB9TEp5td57KovHS/ewPBjm2gJvZ5/cKfxOOb3RNU1IUBqElrNUWyfY89t0stavKAmnTf19J+zQ1j8vz+6wXohIJpsvqG/Tiue9G2OwUe20BNlrPjtek/HHj/ttTOv1WTbHkoaV4tXNo3D5gFBdLEFmZ+8PGN7b2Adp6oBZAMiskRfzYpBsl/H8se0S8EzL96rIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiIiI6JP+AoJX9lqK157/AAAAAElFTkSuQmCC");
+    background-repeat: no-repeat;
+    background-position: top;
+    .add-form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width:40%;
+        padding:2%;
+        margin-top:7%;
+        border: 3px solid yellow;
+        
+        border-radius: 10%;
+        input{
+            width:100%;
+            margin:3%;
+        }
+        
+        button{
+            margin-top:2%;
+        }
+        select{
+            position: relative;
+            left:24%;
+        }
+        
+    }
+}
+
 label{
     font-size: 2rem;
 }

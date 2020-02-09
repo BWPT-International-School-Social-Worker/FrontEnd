@@ -1,17 +1,18 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import "./Register.scss";
-
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 import { StylBtn } from "../Styles/styles";
 
 function Form() {
+
   const { register, handleSubmit, errors } = useForm();
 
   const registerFunc = values => {
     axiosWithAuth()
       .post("/auth/register", values)
       .then(response => {
+        
         console.log(response);
       })
       .catch(error => console.log(error.response));

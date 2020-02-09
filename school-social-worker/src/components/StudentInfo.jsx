@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { studentContext } from "../contexts/studentContext";
+import "./StudentInfo.scss";
 
 function StudentInfo(props) {
   const { students } = useContext(studentContext);
@@ -18,8 +19,15 @@ function StudentInfo(props) {
       <h1>
         {student && student.first_name} {student && student.last_name}
       </h1>
-      <div>
-          
+      <div className = "details-container">
+            <ul>
+                <li>Grade {student && student.grade_id}</li>
+                <li>{student && student.grade_id}</li>
+                <li>{student && student.grade_id}</li>
+                <li>{student && student.grade_id}</li>
+                <li>{student && student.grade_id}</li>
+                <li>{student && student.grade_id}</li>
+            </ul>
       </div>
     </div>
   );
