@@ -4,6 +4,7 @@ import React, {useContext } from "react";
 import { useForm } from "react-hook-form";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 import { studentContext } from "../contexts/studentContext";
+// import {useHistory} from "react-router-dom"
 
 const EditStudentForm = () => {
   const { getStudents } = useContext(studentContext);
@@ -26,6 +27,8 @@ const EditStudentForm = () => {
     }
   });
 
+  // const history=useHistory();
+
   const addFunc = value => {
     console.log(value);
     axiosWithAuth()
@@ -33,6 +36,7 @@ const EditStudentForm = () => {
       .then(response => {
         console.log(response);
         getStudents();
+        // history.push("/home")
       })
       .catch(error => console.log(error.response));
   };

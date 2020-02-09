@@ -25,7 +25,7 @@ function App() {
   return (
     <studentContext.Provider value={{ students, getStudents }}>
     
-        <Routes>routes</Routes>
+        <Routes></Routes>
         <Footer></Footer>
     </studentContext.Provider>
   );
