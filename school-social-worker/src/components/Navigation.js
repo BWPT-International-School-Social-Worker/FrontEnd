@@ -10,14 +10,14 @@ function Routes() {
     <div>
       <Router>
         <div>
-          <ul>
+          <nav>
             <li>
               <Link to="/students">My Students</Link>
             </li>
             <li>
               <Link to="/newstudent">Add Student</Link>
             </li>
-          </ul>
+          </nav>
           <Switch>
             <Route path="/students">
               <StudentList></StudentList>

@@ -4,6 +4,7 @@ import { Route, Redirect } from "react-router-dom";
 export default function ProtectedRoute({ component: Component, ...rest }) {
   let loggedIn = localStorage.getItem("token");
 
+  setTimeout(2000,)
   return (
     <Route
       {...rest}
@@ -11,7 +12,7 @@ export default function ProtectedRoute({ component: Component, ...rest }) {
         if (loggedIn) {
           return <Component />;
         } else {
-          return <Redirect to="/landing" />;
+          return <Redirect to="/login" />;
         }
       }}
     />
