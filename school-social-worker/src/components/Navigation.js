@@ -1,3 +1,47 @@
-// A window to hold all other components. Should have tabs along top of window to link to 
-// "Home","New Student","Log out" others if you have time but they don't need to do anything.
-// these are the pages that can only be seen after logging in. It will go in the "App" in the privet route
+import React from "react";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import StudentList from "./StudentList";
+import AddStudent from "./AddStudentForm";
+import EditStudentForm from "./EditStudentForm";
+import Student from "./Student";
+
+function Routes() {
+  return (
+    <div>
+      <Router>
+        <div>
+          <ul>
+            <li>
+              <Link to="/students">My Students</Link>
+            </li>
+            <li>
+              <Link to="/newstudent">Add Student</Link>
+            </li>
+          </ul>
+          <Switch>
+            <Route path="/students">
+              <StudentList></StudentList>
+            </Route>
+            <Route path="/newstudent">
+              <AddStudent></AddStudent>
+            </Route>
+            <Route
+              path="/edit/:id"
+              render={props => {
+                return <EditStudentForm {...props} />;
+              }}
+            ></Route>
+            <Route
+              path="/student/:id"
+              render={props => {
+                return <Student {...props} />;
+              }}
+            ></Route>
+          </Switch>
+        </div>
+      </Router>
+    </div>
+  );
+}
+
+export default Routes;
