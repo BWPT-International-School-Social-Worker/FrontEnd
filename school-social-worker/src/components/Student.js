@@ -3,7 +3,7 @@ import { axiosWithAuth } from "../utils/axiosWithAuth";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { studentContext } from "../contexts/studentContext";
-import StudentCard from "./StudentCard";
+import "./StudentCard.scss";
 
 function Student(props) {
   const [currentStudent, setCurrentStudent] = useState({});
@@ -34,12 +34,52 @@ function Student(props) {
 
   useEffect(() => {
     getStudent();
-  },[]);
+  }, []);
 
   return (
     <div>
       <h4>
-        <StudentCard student={currentStudent}></StudentCard>
+        <div>
+          <ul className="student-card" key={currentStudent.id}>
+            <img src="https://iconsetc.com/icons-watermarks/flat-circle-white-on-yellow/bfa/bfa_user/bfa_user_flat-circle-white-on-yellow_512x512.png" />
+
+            <li>
+              Name: {currentStudent.first_name} {currentStudent.last_name}
+            </li>
+            <span>
+              <li>Grade: {currentStudent.grade_id}</li>
+            </span>
+            <li>Status: {currentStudent.status}</li>
+            <span>
+              <li>Backgound: {currentStudent.background_story}</li>
+            </span>
+            <span>
+              <li>Age: {currentStudent.age}</li>
+            </span>
+            <span>
+              <li>Insurance: {currentStudent.insurance_card}</li>
+            </span>
+            <span>
+              <li>
+                Insurance Expires : {currentStudent.insurance_expiration_date}
+              </li>
+            </span>
+            <span>
+              <li>Birth Certificate: {currentStudent.birth_certificate}</li>
+            </span>
+            <span>
+              <li>Special Needs: {currentStudent.special_needs}</li>
+            </span>
+            <span>
+              <li>Representitive's Name: {currentStudent.representative}</li>
+            </span>
+            <span>
+              <li>Contact Information: {currentStudent.contact_info}</li>
+            </span>
+            {/* backend documentation says this is where the date is stored but it only shows a single number */}
+            <li>Date of last visit: {currentStudent.visit_id}</li>
+          </ul>
+        </div>
       </h4>
       <Link to={`/edit/${id}`}>Edit</Link>
       <button onClick={deleteFunc}>Delete</button>
