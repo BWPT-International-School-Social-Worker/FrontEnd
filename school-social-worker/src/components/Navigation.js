@@ -8,48 +8,38 @@ import "./MainNav.scss";
 
 function Routes() {
   return (
-    
-      <div>
+    <div>
       <Router>
-        <div className = "nav-container">
-          <img
-            alt=""
-            src="https://www.ghanamakeadifference.org/uploads/2/9/4/1/29418375/1481814865.png"
-          />
-          <ul>
+        <div className = "nav-div">
+          <nav>
             <li>
               <Link to="/students">My Students</Link>
             </li>
             <li>
               <Link to="/newstudent">Add Student</Link>
             </li>
-            <li>
-              <Link to="/">LogOut</Link>
-            </li>
-          </ul>
-          </div>
-          
-          <Switch>
-            <Route path="/students">
-              <StudentList></StudentList>
-            </Route>
-            <Route path="/newstudent">
-              <AddStudent></AddStudent>
-            </Route>
-            <Route
-              path="/edit/:id"
-              render={props => {
-                return <EditStudentForm {...props} />;
-              }}
-            ></Route>
-            <Route
-              path="/student/:id"
-              render={props => {
-                return <Student {...props} />;
-              }}
-            ></Route>
-          </Switch>
-       
+          </nav>
+        </div>
+        <Switch>
+          <Route path="/students">
+            <StudentList></StudentList>
+          </Route>
+          <Route path="/newstudent">
+            <AddStudent></AddStudent>
+          </Route>
+          <Route
+            path="/edit/:id"
+            render={props => {
+              return <EditStudentForm {...props} />;
+            }}
+          ></Route>
+          <Route
+            path="/student/:id"
+            render={props => {
+              return <Student {...props} />;
+            }}
+          ></Route>
+        </Switch>
       </Router>
     </div>
   );

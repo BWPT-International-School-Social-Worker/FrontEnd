@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { studentContext } from "./contexts/studentContext";
-import Routes from "./components/Routes";
 import { axiosWithAuth } from "./utils/axiosWithAuth";
-import Footer from "./components/Footer";
+import Footer from "./components/Footer"
+import Routes from "./components/Routes";
 
 function App() {
   const [students, setStudents] = useState();
@@ -23,8 +23,8 @@ function App() {
 
   return (
     <studentContext.Provider value={{ students, getStudents }}>
-      <Routes/>
-      <Footer></Footer>
+        <Routes></Routes>
+        <Footer></Footer>
     </studentContext.Provider>
   );
 }

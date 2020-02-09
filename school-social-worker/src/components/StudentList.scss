@@ -35,3 +35,20 @@
 
    
 }
+
+.filter{
+    width:100%;
+    display: flex;
+    justify-content: center;
+}
+
+.alert{
+    font-size:2.5rem;
+    margin-top:5%;
+    color:red;
+    text-shadow: none;
+}
+
+label{
+    margin-right:2%;
+}

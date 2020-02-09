@@ -1,13 +1,11 @@
 import "./StudentCard.scss";  
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory,Link } from "react-router-dom";
 
 export default function StudentCard(props) {
   const student = props.student;
   const history = useHistory();
-  const routeToPage = () => {
-    history.push(`/student-info/${props.student.id}`);
-  };
+ 
   console.log(student);
   return (
     
@@ -21,7 +19,7 @@ export default function StudentCard(props) {
           <li>Grade {props.student.grade_id}</li>
         </span>
         <li>Status: {props.student.status}</li>
-        <button onClick={() => routeToPage()}>More Info</button>
+        <Link to={`/student/${student.id}`}><button >More Info</button></Link>
       </ul>
       
     

@@ -18,6 +18,7 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
+    
 
     a {
       font-size: 3.8rem;
@@ -35,4 +36,9 @@
     background-size: auto;
     background-repeat: no-repeat;
     background-position: right;
+  }
+  nav{
+    width:100%;
+    display: flex;
+    justify-content: space-around;
   }
