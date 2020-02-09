@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 import { useHistory } from "react-router-dom";
 
-function Login () {
+function Login() {
   const { handleSubmit, register } = useForm();
   const history = useHistory();
 
@@ -20,9 +20,9 @@ function Login () {
   };
 
   return (
-    <div>
-      login
-      <form onSubmit={handleSubmit(loginFunc)}>
+    <div className="form-container">
+      <form className="sign-in-form" onSubmit={handleSubmit(loginFunc)}>
+        <h1>Login Here</h1>
         <input
           ref={register}
           type="text"
