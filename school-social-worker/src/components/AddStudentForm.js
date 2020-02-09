@@ -1,6 +1,6 @@
 import "./AddStudentForm.scss";
 
-import React, {useContext } from "react";
+import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 import { studentContext } from "../contexts/studentContext";
@@ -42,8 +42,10 @@ const EditStudentForm = () => {
   };
 
   return (
-    <div>
-      <form className="edit-form" onSubmit={handleSubmit(addFunc)}>
+    <div className="add-container">
+      <h1>Register New student</h1>
+      <form className="add-form" onSubmit={handleSubmit(addFunc)}>
+        <label htmlFor="first_name">First Name of New Student</label>
         <input
           type="text"
           placeholder="first_name"
@@ -68,18 +70,8 @@ const EditStudentForm = () => {
           name="background_story"
           ref={register}
         />
-        <input
-          type="text"
-          placeholder="status"
-          name="status"
-          ref={register}
-        />
-        <input
-          type="number"
-          placeholder="age"
-          name="age"
-          ref={register}
-        />
+        <input type="text" placeholder="status" name="status" ref={register} />
+        <input type="number" placeholder="age" name="age" ref={register} />
         <label htmlFor="insurance_card">Has Insurance Card?</label>
         <input type="checkbox" name="insurance_card" ref={register} />
         <input
@@ -114,11 +106,9 @@ const EditStudentForm = () => {
           name="visit_id"
           ref={register}
         />
-
         <input type="submit" />
       </form>
     </div>
   );
 };
-
 export default EditStudentForm;

@@ -1,3 +1,38 @@
-label{
+.add-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("https://teamwarriorwithin.com/wp-content/uploads/2017/02/Notebook-paper-background.png");
+    .add-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 40%;
+      padding: 2%;
+  
+      border: 3px solid yellow;
+  
+      border-radius: 10%;
+      input {
+        width: 40%;
+        margin: 3%;
+      }
+  
+      button {
+        margin-top: 2%;
+      }
+      select {
+        position: relative;
+        left: 24%;
+      }
+    }
+  }
+  
+  label {
     font-size: 2rem;
-}
+  }
