@@ -1,25 +1,40 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import "./Register.scss";
-
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 import { StylBtn } from "../Styles/styles";
+// import MainNav from "./MainNav";
+import * as yup from "yup";
+import "./Register.scss";
+
+const schema = yup.object().shape({
+  username: yup.string().required().min(4),
+  
+});
 
 function Form() {
-  const { register, handleSubmit, errors } = useForm();
+
+  const { register, handleSubmit, errors } = useForm({
+    validationSchema: schema
+  });
+
 
   const registerFunc = values => {
     axiosWithAuth()
       .post("/auth/register", values)
       .then(response => {
+        
         console.log(response);
+       
       })
       .catch(error => console.log(error.response));
   };
   console.log(errors);
 
   return (
-    <headDiv className="form-container">
+    <div>
+      {/* <MainNav/> */}
+    <div className="form-container">
+      
       <form className="sign-up-form" onSubmit={handleSubmit(registerFunc)}>
         <div className="user-icon">
           <i
@@ -43,6 +58,7 @@ function Form() {
           name="username"
           ref={register({ required: true, max: 15, min: 8 })}
         />
+        {errors.username && <p>{errors.username.message}</p>}
         <i
           className="fas fa-signature"
           style={{ fontSize: "20px", color: "grey" }}
@@ -80,7 +96,7 @@ function Form() {
           ref={register({ pattern: /^\S+@\S+$/i })}
         />
         <i
-          class="fas fa-phone-square-alt"
+          className="fas fa-phone-square-alt"
           style={{ fontSize: "20px", color: "grey" }}
         >
           :
@@ -103,7 +119,7 @@ function Form() {
             <option value=" Social Worker"> Social Worker</option>
           </select>
         </label>
-        <i class="fas fa-building" style={{ fontSize: "20px", color: "grey" }}>
+        <i className="fas fa-building" style={{ fontSize: "20px", color: "grey" }}>
           :
         </i>
         <input
@@ -112,7 +128,7 @@ function Form() {
           name="organization"
           ref={register({ required: true })}
         />
-        <i class="fas fa-lock" style={{ fontSize: "20px", color: "grey" }}>
+        <i className="fas fa-lock" style={{ fontSize: "20px", color: "grey" }}>
           :
         </i>
         <input
@@ -124,7 +140,8 @@ function Form() {
 
         <StylBtn type="submit">Register</StylBtn>
       </form>
-    </headDiv>
+    </div>
+    </div>
   );
 }
 

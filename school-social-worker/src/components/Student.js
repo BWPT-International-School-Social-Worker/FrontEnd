@@ -34,7 +34,7 @@ function Student(props) {
 
   useEffect(() => {
     getStudent();
-  });
+  },[]);
 
   return (
     <div>
