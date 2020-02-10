@@ -2,7 +2,7 @@
   margin: 2%;
   padding: 4%;
   width: 12%;
- font-weight: bolder;
+  font-weight: bolder;
   font-size: 4rem;
   text-align: center;
   display: flex;
@@ -74,10 +74,12 @@ justify-content: center;
      
       
   }
-  a{
-    display: flex;
-  justify-content: center;
-  }
+  
+}
+a{
+  width:12%;
+  display: flex;
+justify-content: center;
 }
 
 
