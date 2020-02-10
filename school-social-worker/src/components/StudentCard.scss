@@ -20,7 +20,7 @@
   img{
       border-radius: 100%;
       margin-bottom: 10%;
-      margin-left: 25%;
+      margin-left: 10%;
       border:2px solid black;
      
       
@@ -38,4 +38,47 @@
     }
   }
 }
+a{
+  display: flex;
+justify-content: center;
+}
+
+.info-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.student-info-card{
+  font-weight: bolder;
+  font-size: 4rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border-bottom: 1px solid yellow;
+
+  li {
+    margin-bottom: 20%;
+  
+  }
+  span {
+    font-size: 3rem;
+  }
+  img{
+      border-radius: 100%;
+      margin-bottom: 10%;
+      margin-left: 35%;
+      border:2px solid black;
+     
+      
+  }
+  a{
+    display: flex;
+  justify-content: center;
+  }
+}
+
+
 

@@ -42,7 +42,7 @@ function StudentList() {
         <div className="student-container">
           {filtered &&
             filtered.map(student => {
-              return <StudentCard key={student.id} student={student} />;
+              return <Link to={`/student/${student.id}`}><StudentCard key={student.id} student={student} /></Link>
             })}
         </div>
       </div>

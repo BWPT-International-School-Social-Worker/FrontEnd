@@ -37,10 +37,10 @@ function Student(props) {
   }, []);
 
   return (
-    <div>
+    <div className = "info-container">
       <h4>
         <div>
-          <ul className="student-card" key={currentStudent.id}>
+          <ul className="student-info-card" key={currentStudent.id}>
             <img src="https://iconsetc.com/icons-watermarks/flat-circle-white-on-yellow/bfa/bfa_user/bfa_user_flat-circle-white-on-yellow_512x512.png" />
 
             <li>
@@ -82,7 +82,7 @@ function Student(props) {
         </div>
       </h4>
       <Link to={`/edit/${id}`}>Edit</Link>
-      <button onClick={deleteFunc}>Delete</button>
+      <button className= "delete" onClick={deleteFunc}>Delete</button>
     </div>
   );
 }
