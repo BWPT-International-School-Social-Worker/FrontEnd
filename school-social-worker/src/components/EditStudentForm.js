@@ -53,7 +53,7 @@ const EditStudentForm = props => {
   };
 
   return (
-    <div>
+    <div className = "edit-container">
       <form className="edit-form" onSubmit={handleSubmit(editFunc)}>
         <input
           type="text"
