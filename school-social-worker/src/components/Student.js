@@ -26,7 +26,7 @@ function Student(props) {
       .delete(`/students/${id}`)
       .then(response => {
         console.log(response.data);
-        history.push("/home");
+        history.push("/students");
         getStudents();
       })
       .catch(error => console.log(error.response));

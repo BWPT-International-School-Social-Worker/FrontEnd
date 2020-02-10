@@ -5,7 +5,6 @@ import Footer from "./components/Footer"
 import Routes from "./components/Routes";
 
 function App() {
-
   const [students, setStudents] = useState();
 
   const getStudents = () => {

@@ -1,5 +1,5 @@
 .form-container {
-  height: 135vh;
+  height: 155vh;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -16,7 +16,7 @@
     display: flex;
     margin-left: 10px;
     width: 36%;
-    height: 105vh;
+    height: 135vh;
     flex-direction: column;
     justify-content: center;
     padding: 50px;
@@ -88,4 +88,22 @@
       margin-top:5%;
       margin-left:40%;
   }
+ 
 }
+.login-button{
+  position: relative;
+  left:85%;
+  bottom: 30px;
+  outline:1px solid black;
+  width:10%;
+  text-align: center;
+  padding:3px;
+ 
+}
+p{
+  color:red;
+}
+
+
+
+  

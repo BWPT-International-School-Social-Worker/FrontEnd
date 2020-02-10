@@ -1,31 +1,41 @@
+.student-card {
+  margin: 2%;
+  padding: 4%;
+  width: 12%;
+ font-weight: bolder;
+  font-size: 4rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border-bottom: 1px solid yellow;
 
-
-  .student-card {
-    margin: 2%;
-    padding: 4%;
-    width: 12%;
-    font-weight: bold;
-    font-size: 4rem;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    border-bottom: 1px solid yellow;
-
-    li {
-      margin-bottom: 20%;
-    
-    }
-    span {
-      font-size: 3rem;
-    }
-    img{
-        border-radius: 100%;
-        margin-bottom: 10%;
-        margin-left: 12%;
-        border:2px solid black;
-       
-        
+  li {
+    margin-bottom: 20%;
+  
+  }
+  span {
+    font-size: 3rem;
+  }
+  img{
+      border-radius: 100%;
+      margin-bottom: 10%;
+      margin-left: 25%;
+      border:2px solid black;
+     
+      
+  }
+  button {
+    width: 100%;
+    color: black;
+    border-radius: 5%;
+    height: 30px;
+    font-size: 1.8rem;
+    border:2px solid black;
+    cursor: pointer;
+    &:hover {
+      transform: scale3d(1.4, 1.4, 1) ;
     }
   }
+}
 

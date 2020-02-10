@@ -13,7 +13,7 @@
     background-position: center;
     text-shadow:  1px 1px grey;
   
-
+   
     .student-list-h1{
         color:yellow;
         background-color: whitesmoke;
@@ -34,4 +34,21 @@
     
 
    
+}
+
+.filter{
+    width:100%;
+    display: flex;
+    justify-content: center;
+}
+
+.alert{
+    font-size:2.5rem;
+    margin-top:5%;
+    color:red;
+    text-shadow: none;
+}
+
+label{
+    margin-right:2%;
 }

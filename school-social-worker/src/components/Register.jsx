@@ -7,8 +7,12 @@ import * as yup from "yup";
 import "./Register.scss";
 
 const schema = yup.object().shape({
-  username: yup.string().required().min(4),
-  
+  username: yup.string().required().min(8).max(15),
+  first_name:yup.string().required().max(12),
+  last_name:yup.string().required().max(12),
+  email:yup.string().email().required(),
+  password:yup.string().required().min(8),
+  organization:yup.string().required()
 });
 
 function Form() {
@@ -69,8 +73,9 @@ function Form() {
           type="text"
           placeholder="First name"
           name="first_name"
-          ref={register({ required: true, maxLength: 80 })}
+          ref={register({ required: true, maxLength: 12 })}
         />
+        {errors.first_name && <p>{errors.first_name.message}</p>}
         <i
           className="fas fa-signature"
           style={{ fontSize: "20px", color: "grey" }}
@@ -81,8 +86,9 @@ function Form() {
           type="text"
           placeholder="Last name"
           name="last_name"
-          ref={register({ required: true, maxLength: 100 })}
+          ref={register({ required: true, maxLength:12 })}
         />
+        {errors.last_name && <p>{errors.last_name.message}</p>}
         <i
           className="fas fa-envelope"
           style={{ fontSize: "20px", color: "grey" }}
@@ -95,6 +101,7 @@ function Form() {
           name="email"
           ref={register({ pattern: /^\S+@\S+$/i })}
         />
+        {errors.email && <p>{errors.email.message}</p>}
         <i
           className="fas fa-phone-square-alt"
           style={{ fontSize: "20px", color: "grey" }}
@@ -108,7 +115,7 @@ function Form() {
           ref={register({ maxLength: 12 })}
         />
         <label className="role" htmlFor="role">
-          {" "}
+          
           Role:
           <select
             className="role"
@@ -131,12 +138,15 @@ function Form() {
         <i className="fas fa-lock" style={{ fontSize: "20px", color: "grey" }}>
           :
         </i>
+     
         <input
+        className = "password-icon"
           type="text"
           placeholder="Password"
           name="password"
           ref={register({ required: true, min: 8 })}
         />
+           {errors.password && <p>{errors.password.message}</p>}
 
         <StylBtn type="submit">Register</StylBtn>
       </form>
