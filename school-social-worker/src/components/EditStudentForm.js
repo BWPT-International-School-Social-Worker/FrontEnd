@@ -1,14 +1,16 @@
 import "./EditForm.scss";
-  
+
 import React, { useState, useEffect, useContext } from "react";
 import { useForm } from "react-hook-form";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 import { studentContext } from "../contexts/studentContext";
+import { useHistory } from "react-router-dom";
 
 const EditStudentForm = props => {
   const [currentStudent, setCurrentStudent] = useState({});
   const { getStudents } = useContext(studentContext);
   const id = props.match.params.id;
+  const history = useHistory();
 
   const getStudent = () => {
     axiosWithAuth()
@@ -21,7 +23,7 @@ const EditStudentForm = props => {
 
   useEffect(() => {
     getStudent();
-  }, );
+  });
 
   const { register, handleSubmit } = useForm({
     defaultValues: {
@@ -48,12 +50,13 @@ const EditStudentForm = props => {
       .then(response => {
         console.log(response);
         getStudents();
+        history.push("/students")
       })
       .catch(error => console.log(error.response));
   };
 
   return (
-    <div className = "edit-container">
+    <div className="edit-container">
       <form className="edit-form" onSubmit={handleSubmit(editFunc)}>
         <input
           type="text"
