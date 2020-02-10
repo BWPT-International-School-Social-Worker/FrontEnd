@@ -24,7 +24,7 @@ function StudentList() {
     e.preventDefault();
     setSearched(e.target.value);
   }
-  if (filtered.length > 0) {
+  if (filtered && filtered.length > 0) {
     return (
       <div>
         <h1 className="student-list-h1">Our Students</h1>
