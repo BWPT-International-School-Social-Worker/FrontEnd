@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Switch, useHistory} from "react-router-dom";
 import StudentList from "./StudentList";
 import AddStudent from "./AddStudentForm";
 import EditStudentForm from "./EditStudentForm";
@@ -7,6 +7,11 @@ import Student from "./Student";
 import "./MainNav.scss";
 
 function Routes() {
+  const history=useHistory()
+  const logoutFunc=()=>{
+    localStorage.removeItem("token")
+    history.push("/")
+  }
   return (
     <div>
       <Router>
@@ -18,6 +23,7 @@ function Routes() {
             <li>
               <Link to="/newstudent">Add Student</Link>
             </li>
+            <button className= "logout" onClick={logoutFunc}>Logout</button>
           </nav>
         </div>
         <Switch>

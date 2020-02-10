@@ -19,7 +19,8 @@ export default function StudentCard(props) {
           <li>Grade {props.student.grade_id}</li>
         </span>
         <li>Status: {props.student.status}</li>
-        <Link to={`/student/${student.id}`}><button >More Info</button></Link>
+        {/* backend documentation says this is where the date is stored but it only shows a single number
+        <li>Date of last visit: {props.student.visit_id}</li> */}
       </ul>
       
     

@@ -63,7 +63,30 @@ img{
   width: 100%;
   display: flex;
   justify-content: space-around;
+ 
+
   nav{
     width:95%;
   }
+}
+
+.logout{
+ 
+    color: black;
+    font-size: 3.6rem;
+    font-weight:bold;
+    margin: 5%;
+    text-decoration: none;
+    position: relative;
+    bottom:30%;
+    
+  
+    &:hover{
+        color:#f9b514;
+       
+        transform: scale3d(1.4, 1.4, 1) rotate(360deg);
+        text-shadow: 1px 1px black;
+        text-decoration: none;
+    }
+  
 }
